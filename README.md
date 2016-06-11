@@ -1,9 +1,7 @@
 
 ## WebServa.com
 
-<b>Note that this service is currently being rebranded from RedisHub.com to WebServa.com</b>
-
-<i>The RedisHub.com and WebServa.com home page and `/about` are redirected to this page.</i>
+Note that this service is currently being <b>rebranded from RedisHub.com to WebServa.com</b> <i>The RedisHub.com and WebServa.com home page and `/about` are redirected to this page.</i>
 
 WebServa is a serverless database platform, built on the famous Redis data structure server. 
 
