@@ -20,7 +20,7 @@ In the meantime, we just provide ad hoc virtual Redis servers with the following
 WebServa's marketing tag line might be "the fast web database."
 - It's <b>fast</b> because it's primarily a RAM database, that is continually persisted to disk
 - It is a <a>database</a> as per Redis - see http://redis.io/topics/introduction
-- Finally it's a <b>web database,</b> because it's accessed via HTTPS. What else? ;)
+- Finally it's a <b>web database</b> because it is accessed via HTTPS
 
 It's for everyone because its easy to store data by key, with lists, sets and sorted sets to keep track of things. There is more to come e.g. geographical data courtesy of Redis 3.2.
 
