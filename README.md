@@ -8,10 +8,9 @@
 WebServa is a serverless database platform, built on the famous Redis data structure server. 
 
 We provide serverless virtual Redis servers via a client-authenticated HTTPS API with a subset of Redis commands. Consequently:
-- we can publish a database directly to CDN for mass consumption
-- besides JSON, we should enable custom transformations into web views
-- we should enable feedback data from web views
-- we should provide a platform for the composition of custom middleware
+- we can publish a keyspace via CDN for mass consumption
+- besides JSON, we should enable custom transformations into HTML web views
+- we should enable feedback data from web views to be recorded
 
 In the meantime, we just provide ad hoc virtual Redis servers with the following available perspectives:
 - JSON data (can be a string)
