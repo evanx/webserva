@@ -2,34 +2,21 @@
 
 <i>Note that this service is currently being rebranded from <b>RedisHub.com to WebServa.com</b> The RedisHub.com and WebServa.com home page and `/about` are redirected to this page.</i>
 
-WebServa is a serverless database platform, built on the famous Redis data structure server.
+WebServa is a serverless database platform for virtual Redis servers, via a client-authenticated HTTPS API, with a subset of Redis commands. 
+
+You store data by key in a "keyspace," and can use lists, sets and sorted sets to keep track of things. There is more to come e.g. geographical data courtesy of Redis 3.2.
 
 Try our demo: https://demo.redishub.com/create-ephemeral. This endpoint creates a new ephemeral keyspace with a TTL of 10 minutes, for demonstration purposes. This is assigned an "unguessable" 12 character keyspace name.
 
 <img src='http://evanx.github.io/images/rquery/redishub-welcome.png'/>
 
-We provide serverless virtual Redis servers via a client-authenticated HTTPS API with a subset of Redis commands. Consequently:
-- you can publish a keyspace via CDN for mass consumption
-- besides JSON, we intend enable to custom transformations into HTML web views, e.g. for a blog
-- we should enable feedback data from web views to be recorded e.g. comments posted on a blog
-
-Currently we support the following perspectives for data:
-- JSON data (can be a string)
-- HTML access console (currently the bare minimum)
-- CLI - plain text for interactive bash shell e.g. via our `curl` wrapper script
-
-WebServa's marketing tag line might be "the fast web database."
-- It's <b>fast</b> because it's primarily a RAM database, persisted to disk
-- It's a <b>database</b> as per Redis - see http://redis.io/topics/introduction
-- It's a <b>web database</b> because it is accessed via HTTPS
-
-You store data by key in a "keyspace," and can use lists, sets and sorted sets to keep track of things. There is more to come e.g. geographical data courtesy of Redis 3.2.
-
-The goals of WebServa are to provide:
-- instant serverless databases, called "keyspaces"
+The goals of WebServa are:
+- instant virtual Redis servers
 - private, shared and public keyspaces
 - access control to keyspaces and their keys
 - web publication of data and views
+
+Note that we specialize in structured data and JSON, not media and web assets. Having said that, we wish to support the transformation of raw data into custom HTML web views using JavaScript e.g. for blog entries, but expect that logos, images etc, will be hosted elsewhere in the cloud, and pulled into HTML views via their URL.
 
 #### Accounts
 
