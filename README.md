@@ -6,10 +6,10 @@ WebServa is a serverless database platform, built on the famous Redis data struc
 
 We provide serverless virtual Redis servers via a client-authenticated HTTPS API with a subset of Redis commands. Consequently:
 - you can publish a keyspace via CDN for mass consumption
-- besides JSON, we intend enable custom transformations into HTML web views, e.g. for blog articles
+- besides JSON, we intend enable to custom transformations into HTML web views, e.g. for a blog 
 - we should enable feedback data from web views to be recorded e.g. comments posted on a blog
 
-In the meantime, we just provide ad hoc virtual Redis servers with the following available perspectives:
+Currently we support the following perspectives only:
 - JSON data (can be a string)
 - HTML access console (currently the bare minimum)
 - CLI - plain text for interactive bash shell e.g. via our `curl` wrapper script
@@ -19,11 +19,17 @@ WebServa's marketing tag line might be "the fast web database."
 - It's a <a>database</a> as per Redis - see http://redis.io/topics/introduction
 - It's a <b>web database</b> because it is accessed via HTTPS
 
-It's goal is to serve data at speed to a web audience, leveraging Nginx, Redis Cluster, CloudFlare, and our Node microservices for access control and accounting.
+You store data by key in a "keyspace," and can use lists, sets and sorted sets to keep track of things. There is more to come e.g. geographical data courtesy of Redis 3.2.
 
-It's for everyone because its easy to store data by key, with lists, sets and sorted sets to keep track of things. There is more to come e.g. geographical data courtesy of Redis 3.2.
+The goals of WebServa are to provide: 
+- instant serverless databases, called "keyspaces"
+- private, shared and public keyspaces
+- access control to keyspaces and their keys
+- publish data and views to web audiences of any size
 
-Try demo: https://demo.redishub.com/create-ephemeral. This endpoint creates a new ephemeral keyspace with a TTL of 10 minutes, for demonstration purposes. This is assigned an "unguessable" 12 character keyspace name. 
+Under the hood we use Nginx, Redis, the CloudFlare.com CDN service, and our own opensource software, namely https://github.com/evanx/rquery. 
+
+Try our demo: https://demo.redishub.com/create-ephemeral. This endpoint creates a new ephemeral keyspace with a TTL of 10 minutes, for demonstration purposes. This is assigned an "unguessable" 12 character keyspace name. 
 
 <img src='http://evanx.github.io/images/rquery/redishub-welcome.png'/>
 
