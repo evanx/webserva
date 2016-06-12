@@ -5,9 +5,9 @@
 WebServa is a serverless database platform, built on the famous Redis data structure server. 
 
 We provide serverless virtual Redis servers via a client-authenticated HTTPS API with a subset of Redis commands. Consequently:
-- we can publish a keyspace via CDN for mass consumption
-- besides JSON, we should enable custom transformations into HTML web views
-- we should enable feedback data from web views to be recorded
+- you can publish a keyspace via CDN for mass consumption
+- besides JSON, we intend enable custom transformations into HTML web views, e.g. for blog articles
+- we should enable feedback data from web views to be recorded e.g. comments posted on a blog
 
 In the meantime, we just provide ad hoc virtual Redis servers with the following available perspectives:
 - JSON data (can be a string)
@@ -15,9 +15,11 @@ In the meantime, we just provide ad hoc virtual Redis servers with the following
 - CLI - plain text for interactive bash shell e.g. via our `curl` wrapper script
 
 WebServa's marketing tag line might be "the fast web database."
-- It's <b>fast</b> because it's primarily a RAM database, that is continually persisted to disk
-- It is a <a>database</a> as per Redis - see http://redis.io/topics/introduction
-- Finally it's a <b>web database</b> because it is accessed via HTTPS
+- It's <b>fast</b> because it's primarily a RAM database, persisted to disk
+- It's a <a>database</a> as per Redis - see http://redis.io/topics/introduction
+- It's a <b>web database</b> because it is accessed via HTTPS
+
+It's goal is to serve data at speed to a web audience, leveraging Nginx, Redis Cluster, CloudFlare, and our Node microservices for access control and accounting.
 
 It's for everyone because its easy to store data by key, with lists, sets and sorted sets to keep track of things. There is more to come e.g. geographical data courtesy of Redis 3.2.
 
