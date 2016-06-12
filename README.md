@@ -2,11 +2,11 @@
 
 <i>Note that this service is currently being rebranded from <b>RedisHub.com to WebServa.com</b> The RedisHub.com and WebServa.com home page and `/about` are redirected to this page.</i>
 
-WebServa is a serverless database platform, built on the famous Redis data structure server. 
+WebServa is a serverless database platform, built on the famous Redis data structure server.
 
 We provide serverless virtual Redis servers via a client-authenticated HTTPS API with a subset of Redis commands. Consequently:
 - you can publish a keyspace via CDN for mass consumption
-- besides JSON, we intend enable to custom transformations into HTML web views, e.g. for a blog 
+- besides JSON, we intend enable to custom transformations into HTML web views, e.g. for a blog
 - we should enable feedback data from web views to be recorded e.g. comments posted on a blog
 
 Currently we support the following perspectives only:
@@ -16,33 +16,33 @@ Currently we support the following perspectives only:
 
 WebServa's marketing tag line might be "the fast web database."
 - It's <b>fast</b> because it's primarily a RAM database, persisted to disk
-- It's a <a>database</a> as per Redis - see http://redis.io/topics/introduction
+- It's a <b>database</b> as per Redis - see http://redis.io/topics/introduction
 - It's a <b>web database</b> because it is accessed via HTTPS
 
 You store data by key in a "keyspace," and can use lists, sets and sorted sets to keep track of things. There is more to come e.g. geographical data courtesy of Redis 3.2.
 
-The goals of WebServa are to provide: 
+The goals of WebServa are to provide:
 - instant serverless databases, called "keyspaces"
 - private, shared and public keyspaces
 - access control to keyspaces and their keys
 - web publication of data and views
 
-Under the hood we use Nginx, Redis, and our own opensource software, namely https://github.com/evanx/rquery. 
+Under the hood we use Nginx, Redis, and our own opensource software, namely https://github.com/evanx/rquery.
 
-Try our demo: https://demo.redishub.com/create-ephemeral. This endpoint creates a new ephemeral keyspace with a TTL of 10 minutes, for demonstration purposes. This is assigned an "unguessable" 12 character keyspace name. 
+Try our demo: https://demo.redishub.com/create-ephemeral. This endpoint creates a new ephemeral keyspace with a TTL of 10 minutes, for demonstration purposes. This is assigned an "unguessable" 12 character keyspace name.
 
 <img src='http://evanx.github.io/images/rquery/redishub-welcome.png'/>
 
-You can signup via our Telegram bot `@redishub_bot` via the command `/signup.` This will create an account as per your Telegram username. It will advise how to create an a client cert for https://secure.redishub.com/routes, and how to install our CLI `rhcurl` bash script. This is a wrapper of `curl` using your cert. 
+You can signup via our Telegram bot `@redishub_bot` via the command `/signup.` This will create an account as per your Telegram username. It will advise how to create an a client cert for https://secure.redishub.com/routes, and how to install our CLI `rhcurl` bash script. This is a wrapper of `curl` using your cert.
 
 <img src='http://evanx.github.io/images/rquery/rhbot-signup.png'/>
 
-Our "10MB" service is free. This service bundle includes 10MB peak RAM and 20GB monthly transfer. So for example, you can store 250k records averaging 40 characters each, on us. 
+Our "10MB" service is free. This service bundle includes 10MB peak RAM and 20GB monthly transfer. So for example, you can store 250k records averaging 40 characters each, on us.
 
 So sign up and imagine some cool use cases for storing data in memory in the cloud, publishable in volume via CDN, or kept private:
 - "open" keyspaces have a randomly-generated name that you can keep secret, or share
 - keyspaces you create on account are private by default
-- private access is via client certs you have authorised on your account 
+- private access is via client certs you have authorised on your account
 - you can publish specific keyspaces for read-only web access via CDN
 - "permutable" keyspaces can be shared e.g. for registries, message hubs and metrics aggregators
 
@@ -56,15 +56,15 @@ Note that client certs are:
 
 <img src='http://evanx.github.io/images/rquery/rh-curl.png'/>
 
-The service is intended to be priced roughly according to Digital Ocean infrastructure costs, as a market indicator. 
+The service is intended to be priced roughly according to Digital Ocean infrastructure costs, as a market indicator.
 Your account can be topped up via virtual currency where "50MB" bundles are roughly 50c USD per month.
 
 Documentation: https://github.com/evanx/rquery
 
-Technically speaking, WebServa is an Nginx deployment of our opensource Node webserver for Redis multi-tenancy and access control. 
-It is intended to be highly-available for reads via CDN, and also for writes, via Redis Cluster. 
-It is available to client and server, web and mobile apps, authenticated and open. 
-We define "open" as no client cert required, and "secure" as requiring a client cert. 
+Technically speaking, WebServa is an Nginx deployment of our opensource Node webserver for Redis multi-tenancy and access control.
+It is intended to be highly-available for reads via CDN, and also for writes, via Redis Cluster.
+It is available to client and server, web and mobile apps, authenticated and open.
+We define "open" as no client cert required, and "secure" as requiring a client cert.
 
 A client accessing a keyspace might be:
 - our `rhcurl` bash CLI which is `curl` wrapper
@@ -73,7 +73,7 @@ A client accessing a keyspace might be:
 - mobile app e.g. updating the state of a multi-player game
 - internet-connected device e.g. submitting metrics, error and status reports
 - orchestration service for scheduling microservices
-- microservice discovering its configuration 
+- microservice discovering its configuration
 - server-side script to record append-only events offsite
 - server-side app e.g. communicating with with external partners
 
@@ -85,8 +85,8 @@ UNSTABLE, INCOMPLETE
 
 For shorter URLs, we intend the support the following endpoints by the end of June:
 
-- `redishub.com/:account/:keyspace` - openly published keyspaces 
-- `secure.redishub.com/:account/:keyspace` - strictly privately secured keyspaces
+- `webserva.com/:account/:keyspace` - openly published keyspaces
+- `secure.webserva.com/:account/:keyspace` - strictly privately secured keyspaces
 
 We wish to support specific "perspectives" on keyspaces:
 - accessing raw data - e.g. JSON
@@ -95,7 +95,7 @@ We wish to support specific "perspectives" on keyspaces:
 - Tabular data - e.g. for rendering consumption reports and account statements
 - charts - for rendering dashboards of pre-defined metrics
 - Schema.org content - for rendering blog articles according to a specified template
-- compositional perspective - template for the 
+- compositional perspective - template for the
 
 ### FAQ
 
@@ -115,7 +115,7 @@ Links are shown in color. Otherwise click anywhere on the iconized header to go 
 
 For example, in the following screenshot, you would click anywhere on top row containing:
 - the database icon
-- the "hub" account name 
+- the "hub" account name
 - the ephemeral keyspace label
 
 <img src='http://evanx.github.io/images/rquery/redishub-welcome.png'/>
@@ -136,7 +136,7 @@ Note that currently we don't have a command completion tool, but you can edit th
 
 Redis is a popular and awesome NoSQL database. It's in-memory and so really fast. It supports data structures which are well understood and pretty fundamental, e.g. sets, sorted sets, lists, hashes and geos.
 
-Having said that, I love SQL too and may use PostgreSQL to drive `pg.redishub.com` e.g. where each command is saved in a PostgreSQL record like `{account, keyspace, key, command, params}` which can be replayed for point-in-time recovery.
+Having said that, I love SQL too and may use PostgreSQL to drive `pg.webserva.com` e.g. where each command is saved in a PostgreSQL record like `{account, keyspace, key, command, params}` which can be replayed for point-in-time recovery.
 
 #### But isn't Redis just for caching?
 
@@ -148,7 +148,7 @@ You can use `@redishub_bot /signup` which will propose a bash script to generate
 
 #### How do I force my browser to send my cert
 
-Open a new incognito window, or restart your browser. This is required if you pressed Cancel in Chrome when prompted to select the cert. The browser remembers that for the current session, and so will not ask again. 
+Open a new incognito window, or restart your browser. This is required if you pressed Cancel in Chrome when prompted to select the cert. The browser remembers that for the current session, and so will not ask again.
 
 The "secure" site allows sessions without a cert e.g. for "open" routes, but performs access control for account/keyspace access.
 
@@ -176,7 +176,7 @@ Initially, we will provide a disk-based archive limited to:
 Later we will support archiving hashes, lists, sets, zsets and geos.
 
 Ideally the archive should be seamless, although read-only requests might be HTTP redirected to:
-- `cdn.webserva.com` for warm data not recently modified, that has been granted "open" access 
+- `cdn.webserva.com` for warm data not recently modified, that has been granted "open" access
 - `replica.webserva.com` for reading hot data with a client certs i.e. private access
 
 #### Who is WebServa?
@@ -279,30 +279,29 @@ Last but not least, I want to enter the Bot competion and maybe get lucky and wi
 
 It is a deployment of my Node project: https://github.com/evanx/rquery, using Nginx and Redis 2.8.
 
-We serve data globally via the CloudFlare CDN on `cdn.redishub.com.` 
-This is for URL-secured data e.g. that you specifically publish from account keyspaces. 
-It will be cached by CloudFlare for 3 minutes, and so is "warm" data, i.e. regularly updated. 
+We serve data globally via CDN on `cdn.webserva.com.`
+This is for URL-secured data e.g. that you specifically publish from account keyspaces.
+It will be cached for some minutes, and so is "warm" data, i.e. regularly updated.
 
-Incidently, we classify `replica.redishub.com` as "hot" data, since it is updated continually via database replication,
-and not cached via CloudFlare. 
-Moreover it performs client cert authentication to authorise account access.
+Incidently, we classify `replica.webserva.com` as "hot" data, since it is updated continually via database replication,
+and not cached.
 
 There are multiple production configurations deployed via Nginx:
-- demo.redishub.com - playground with short TTLs and no client auth
-- secure.redishub.com - client SSL auth, account admin, longer TTLs
-- open.redishub.com - no client SSL auth e.g. used for enrollment and public/secret keyspaces
-- replica.redishub.com - replica and hot standby
+- demo.webserva.com - playground with short TTLs and no client auth
+- secure.webserva.com - client SSL auth, account admin, longer TTLs
+- open.webserva.com - no client SSL auth e.g. used for enrollment and public/secret keyspaces
+- replica.webserva.com - replica and hot standby
 
 See: https://github.com/evanx/rquery/tree/master/config
 
 For convenience other domains are provided for the "secure" server:
-- cli.redishub.com - for command-line access, so responses are `text/plain` by default
-- json.redishub.com - response content always `application/javascript`
+- cli.webserva.com - for command-line access, so responses are `text/plain` by default
+- json.webserva.com - response content always `application/javascript`
 
 Short-term deployment plans:
 - 64GB Redis Cluster
-- `cdn.redishub.com` for read-only queries to open warm data via CloudFlare CDN
-- `archive.redishub.com` for read-only authenticated access to warm data
+- `cdn.webserva.com` for read-only queries to open warm data via CDN
+- `archive.webserva.com` for read-only authenticated access to warm data
 
 Note that clients should follow HTTP redirects to the above domains when reading data.
 
@@ -338,11 +337,11 @@ The `demo` domain has its own database, but otherwise all subdomains access the 
 Our domains are secured via Let's Encrypt:
 ```shell
 echo -n | openssl s_client \
-  -connect cli.redishub.com:443 2>/dev/null | grep '^Cert' -A2
+  -connect cli.webserva.com:443 2>/dev/null | grep '^Cert' -A2
 ```
 ```shell
 Certificate chain
- 0 s:/CN=secure.redishub.com
+ 0 s:/CN=secure.webserva.com
    i:/C=US/O=Let's Encrypt/CN=Let's Encrypt Authority X3
 ```
 
@@ -350,7 +349,7 @@ Some systems have an outdated "CA certs" file which does not include Let's Encry
 
 We can support only clients that trust Let's Encrypt, explicity if not by default:
 ```shell
-$ curl --cacert ~/.cacerts/letsencrypt/isrgrootx1.pem.txt https://cli.redishub.com/time/seconds
+$ curl --cacert ~/.cacerts/letsencrypt/isrgrootx1.pem.txt https://cli.webserva.com/time/seconds
 1464377206
 ```
 
@@ -359,13 +358,13 @@ See: https://letsencrypt.org/2015/06/04/isrg-ca-certs.html
 
 ### Goals
 
-Build a site "redishub.com" with a foundational HTTP service for accessing and mutating keys in a hosted Redis "keyspace."
+Build a site "webserva.com" with a foundational HTTP service for accessing and mutating keys in a hosted Redis "keyspace."
 
 A keyspace is an online database accessible via Redis-style commands, and can be Redis i.e. in-memory, or disk-based e.g. via ssdb.io.
 
 User stories:
 - Use a free hosted Redis "keyspace" for low-volume ephemeral purposes
-- Deploy your own private "redishub" instance using the `rquery` opensource implementation, as used by WebServa
+- Deploy your own private "webserva" instance using the `rquery` opensource implementation, as used by WebServa
 
 Potential uses of keyspaces:
 - serverless backend database
@@ -382,7 +381,7 @@ Future user stories:
 - Use disk-based keyspaces for archival
 - Manage auto-archival of keys
 - Enable a durable transaction log facility with playback for recovery
-- Deploy WebServa "lambdas" to `lambdas.redishub.com` to build Redis-driven serverless backends
+- Deploy WebServa "lambdas" to `lambdas.webserva.com` to build Redis-driven serverless backends
 - Page lambdas generate web pages from React templates, populated with data from WebServa
 
 WebServa lambdas are special ES2016 scripts that use keyspaces for:
