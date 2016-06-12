@@ -4,6 +4,10 @@
 
 WebServa is a serverless database platform, built on the famous Redis data structure server.
 
+Try our demo: https://demo.redishub.com/create-ephemeral. This endpoint creates a new ephemeral keyspace with a TTL of 10 minutes, for demonstration purposes. This is assigned an "unguessable" 12 character keyspace name.
+
+<img src='http://evanx.github.io/images/rquery/redishub-welcome.png'/>
+
 We provide serverless virtual Redis servers via a client-authenticated HTTPS API with a subset of Redis commands. Consequently:
 - you can publish a keyspace via CDN for mass consumption
 - besides JSON, we intend enable to custom transformations into HTML web views, e.g. for a blog
@@ -29,9 +33,7 @@ The goals of WebServa are to provide:
 
 Under the hood we use Nginx, Redis, and our own opensource software, namely https://github.com/evanx/rquery.
 
-Try our demo: https://demo.redishub.com/create-ephemeral. This endpoint creates a new ephemeral keyspace with a TTL of 10 minutes, for demonstration purposes. This is assigned an "unguessable" 12 character keyspace name.
-
-<img src='http://evanx.github.io/images/rquery/redishub-welcome.png'/>
+#### Accounts
 
 You can signup via our Telegram bot `@redishub_bot` via the command `/signup.` This will create an account as per your Telegram username. It will advise how to create an a client cert for https://secure.redishub.com/routes, and how to install our CLI `rhcurl` bash script. This is a wrapper of `curl` using your cert.
 
@@ -60,6 +62,8 @@ Note that client certs are:
 <img src='http://evanx.github.io/images/rquery/rh-curl.png'/>
 
 Documentation: https://github.com/evanx/rquery
+
+#### Technical Notes
 
 Technically speaking, WebServa is an Nginx deployment of our opensource Node webserver for Redis multi-tenancy and access control.
 It is intended to be highly-available for reads via CDN, and also for writes, via Redis Cluster.
