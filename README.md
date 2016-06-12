@@ -31,8 +31,6 @@ The goals of WebServa are to provide:
 - access control to keyspaces and their keys
 - web publication of data and views
 
-Under the hood we use Nginx, Redis, and our own opensource software, namely https://github.com/evanx/rquery.
-
 #### Accounts
 
 You can signup via our Telegram bot `@redishub_bot` via the command `/signup.` This will create an account as per your Telegram username. It will advise how to create an a client cert for https://secure.redishub.com/routes, and how to install our CLI `rhcurl` bash script. This is a wrapper of `curl` using your cert.
