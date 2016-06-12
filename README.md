@@ -16,7 +16,7 @@ The goals of WebServa are:
 - access control to keyspaces and their keys
 - web publication of data and views
 
-Note that we specialize in structured data and JSON, not media and web assets. Having said that, we wish to support the transformation of raw data into custom HTML web views using JavaScript e.g. for blog entries, but expect that logos, images etc, will be hosted elsewhere in the cloud, and pulled into HTML views via their URL.
+WebServa is a fast web database of structured textual data and JSON, not media and web asset artifacts. For example, your videos and images might be hosted on YouTube.com and Cloudinary.com. Their URLs might be stored in WebServa for the purpose of rendering HTML views.
 
 #### Accounts
 
