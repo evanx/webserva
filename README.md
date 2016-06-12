@@ -9,7 +9,7 @@ We provide serverless virtual Redis servers via a client-authenticated HTTPS API
 - besides JSON, we intend enable to custom transformations into HTML web views, e.g. for a blog
 - we should enable feedback data from web views to be recorded e.g. comments posted on a blog
 
-Currently we support the following perspectives only:
+Currently we support the following perspectives for data:
 - JSON data (can be a string)
 - HTML access console (currently the bare minimum)
 - CLI - plain text for interactive bash shell e.g. via our `curl` wrapper script
@@ -37,7 +37,10 @@ You can signup via our Telegram bot `@redishub_bot` via the command `/signup.` T
 
 <img src='http://evanx.github.io/images/rquery/rhbot-signup.png'/>
 
-Our "10MB" service is free. This service bundle includes 10MB peak RAM and 20GB monthly transfer. So for example, you can store 250k records averaging 40 characters each, on us.
+Our "50MB" service is free. This service bundle is limited to 50MB peak RAM and 20GB monthly transfer. 
+So for example, you can store 1 million records averaging 50 characters each, on us. 
+Your account can be topped up via virtual currency where "50MB" bundles are priced at roughly 50c USD per month.
+This is determined from Digital Ocean infrastructure costs, as a market indicator.
 
 So sign up and imagine some cool use cases for storing data in memory in the cloud, publishable in volume via CDN, or kept private:
 - "open" keyspaces have a randomly-generated name that you can keep secret, or share
@@ -55,9 +58,6 @@ Note that client certs are:
 - client certs are authorised by account admins via our Telegram.org bot
 
 <img src='http://evanx.github.io/images/rquery/rh-curl.png'/>
-
-The service is intended to be priced roughly according to Digital Ocean infrastructure costs, as a market indicator.
-Your account can be topped up via virtual currency where "50MB" bundles are roughly 50c USD per month.
 
 Documentation: https://github.com/evanx/rquery
 
