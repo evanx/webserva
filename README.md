@@ -25,9 +25,9 @@ The goals of WebServa are to provide:
 - instant serverless databases, called "keyspaces"
 - private, shared and public keyspaces
 - access control to keyspaces and their keys
-- publish data and views to web audiences of any size
+- web publication of data and views
 
-Under the hood we use Nginx, Redis, the CloudFlare.com CDN service, and our own opensource software, namely https://github.com/evanx/rquery. 
+Under the hood we use Nginx, Redis, and our own opensource software, namely https://github.com/evanx/rquery. 
 
 Try our demo: https://demo.redishub.com/create-ephemeral. This endpoint creates a new ephemeral keyspace with a TTL of 10 minutes, for demonstration purposes. This is assigned an "unguessable" 12 character keyspace name. 
 
@@ -43,7 +43,7 @@ So sign up and imagine some cool use cases for storing data in memory in the clo
 - "open" keyspaces have a randomly-generated name that you can keep secret, or share
 - keyspaces you create on account are private by default
 - private access is via client certs you have authorised on your account 
-- you can publish specific keyspaces for read-only web access via CloudFlare CDN
+- you can publish specific keyspaces for read-only web access via CDN
 - "permutable" keyspaces can be shared e.g. for registries, message hubs and metrics aggregators
 
 <img src='http://evanx.github.io/images/rquery/rh.png'/>
@@ -175,12 +175,9 @@ Initially, we will provide a disk-based archive limited to:
 
 Later we will support archiving hashes, lists, sets, zsets and geos.
 
-We will publish the archive via CloudFlare on the domain `cdn.redishub.com` so that the data that you make public can be served in volume by CloudFlare. This means that data accessed from some region of the globe, will be cached there for 3 minutes, and served immediately by CloudFlare.
-
-Ideally the archive should be seamless, although read-only requests might be HTTP redirected to get unmodified data:
-- `cdn.redishub.com` for data not modified for some time
-- `replica.redishub.com` for data that has been replicated since it was last modified
-
+Ideally the archive should be seamless, although read-only requests might be HTTP redirected to:
+- `cdn.webserva.com` for warm data not recently modified, that has been granted "open" access 
+- `replica.webserva.com` for reading hot data with a client certs i.e. private access
 
 #### Who is WebServa?
 
