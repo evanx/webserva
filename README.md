@@ -269,7 +269,7 @@ I want to offer a free public utility in perpetuity to support most low-volume u
 
 We use Digital Ocean infrastructure costs as a market indicator, and price our service accordingly, e.g. $5 or 512MB, which is 50c for 50MB.
 This reflects our strategic vision to build a public utility, using our cost-free resources, namely myself.
-Incidently, we intend to use multiple 64GB servers that cost $80 a month, and can accomodate thousands of free accounts, e.g. for Indie developers.
+Incidently, we intend to use multiple 64GB servers that cost $80 a month, to accomodate thousands of free accounts, e.g. for Indie developers.
 The more free accounts we have, the happier I'll be, that my efforts are not in vain.
 
 #### What about higher volume usage?
