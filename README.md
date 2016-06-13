@@ -2,7 +2,9 @@
 
 <i>Note that this service is currently being rebranded from <b>RedisHub.com to WebServa.com</b> The RedisHub.com and WebServa.com home page and `/about` are redirected to this page.</i>
 
-WebServa is a serverless database platform for virtual Redis servers, via a client-authenticated HTTPS API, with a subset of Redis commands. 
+WebServa is a provider of serverless "keyspaces." It is cloud resource intended for web apps, mobile and IoT devices. 
+Technicall speaking, it offers a client-authenticated HTTPS API with a subset of Redis commands for accessing virtual Redis servers.a
+See http://redis.io.
 
 You store data by key in a "keyspace," and can use lists, sets and sorted sets to keep track of things. There is more to come e.g. geographical data courtesy of Redis 3.2.
 
@@ -51,7 +53,9 @@ Documentation: https://github.com/evanx/rquery
 #### Technical Notes
 
 Technically speaking, WebServa is an Nginx deployment of our opensource Node webserver for Redis multi-tenancy and access control.
-It is resource for web apps, mobile and IoT devices.
+
+We use a Telegram.org bot for identity authentication and authorisation, e.g. granting cert access to your account keyspaces.
+
 It is intended to be highly-available for reads via CDN, and also for writes, via Redis Cluster.
 
 A client accessing a keyspace might be:
