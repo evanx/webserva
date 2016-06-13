@@ -3,7 +3,7 @@
 <i>Note that this service is currently being rebranded from <b>RedisHub.com to WebServa.com</b> The RedisHub.com and WebServa.com home page and `/about` are redirected to this page.</i>
 
 WebServa is a provider of serverless "keyspaces." It is cloud resource intended for web apps, mobile and IoT devices. 
-Technicall speaking, it offers a client-authenticated HTTPS API with a subset of Redis commands for accessing virtual Redis servers.a
+Technically speaking, it offers a client-authenticated HTTPS API with a subset of Redis commands for accessing virtual Redis servers.
 See http://redis.io.
 
 You store data by key in a "keyspace," and can use lists, sets and sorted sets to keep track of things. There is more to come e.g. geographical data courtesy of Redis 3.2.
