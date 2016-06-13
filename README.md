@@ -239,7 +239,7 @@ Typically a client app might reverse a transaction when not confirmed. For examp
 A waiting customer orders a product through an ecommerce app or point-of-sale terminal. 
 However network errors at the time cause the original transaction write request to time out, and a subsequent retry. 
 Since the app cannot confirm that the transaction is recorded, it cancels transaction to the customer, i.e. does not deliver the order to the customer. 
-The app should record unconfirmed cancellations in local storage and retry those indefinitely. When the network is restored, the app confirms that each cancelled transaction was never received by the server. If it was received and committed by the server, then the app reverses the transaction, to reflect what actually happened on the client side during the network outtage, i.e. the order was cancelled. We will provide an example implementation of this use-case, e.g. a client-side JavaScript shopping cart app.
+The app should record unconfirmed cancellations in local storage and retry those indefinitely. When the network is restored, the app confirms that each cancelled transaction was never received by the server. If it was received and committed by the server, then the app reverses the transaction, to reflect what actually happened on the client side during the network outtage, i.e. the order was cancelled. We will provide an example implementation of this use-case, i.e. a shopping cart app.
 
 
 #### Why use a hosted Redis service rather than one's own?
