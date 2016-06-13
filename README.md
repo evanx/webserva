@@ -73,21 +73,23 @@ A client accessing a keyspace might be:
 
 UNSTABLE, INCOMPLETE
 
+### How usable?
+
+It's MVP for small ephemeral keyspaces, where keys idle out after 10 days. 
+
+Archiving has not been implemented, and `PERSIST` is not available.
+Hence we only support ephemeral keyspaces.
+
+We have not implemented `SCAN` yet. `KEYS` must be used, and this returns all keys in the keyspace. 
+Hence we only support small keyspaces.
+
+
 ### Immiment API additions
 
 For shorter URLs, we intend the support the following endpoints by the end of June:
 
 - `webserva.com/:account/:keyspace` - openly published keyspaces
 - `secure.webserva.com/:account/:keyspace` - strictly privately secured keyspaces
-
-We wish to support specific "perspectives" on keyspaces:
-- accessing raw data - e.g. JSON
-- schema - specifies required data elements for a class of keyspaces
-- HTML forms - edit and validate hash fields according to a specified schema
-- Tabular data - e.g. for rendering consumption reports and account statements
-- charts - for rendering dashboards of pre-defined metrics
-- Schema.org content - for rendering blog articles according to a specified template
-- compositional perspective - template for the
 
 ### FAQ
 
@@ -265,14 +267,13 @@ I want to offer a free public utility in perpetuity to support most low-volume u
 
 We use Digital Ocean infrastructure costs as a market indicator, and price our service accordingly, e.g. $5 or 512MB, which is 50c for 50MB.
 This reflects our strategic vision to build a public utility, using our cost-free resources, namely myself.
-Incidently, we intend to use multiple 64GB servers that cost $80 a month, to accomodate thousands of free accounts, e.g. for Indie developers.
-The more free accounts we have, the happier I'll be, that my efforts are not in vain.
+Incidently, as soon as warranted, we intend to deploy 64GB servers that can accomodate thousands of free accounts, if we are so lucky to attract that much interest. The more free accounts we have, the happier I'll be, that my efforts are not in vain.
 
 #### Why would a developer use an indie service which might become abandonware?
 
 That is a very good question. I guess it would have to be compelling for a specific niche, e.g. Telegram bots. 
 
-Incidently, as it happens we intend to build a basic bot platform on WebServa in the coming months, i.e. a bot to deploy serverless bots which use a serverless database, which is itself managed via a bot :)
+Incidently, as it happens we intend to build a basic bot platform on WebServa in the coming months, i.e. a bot to deploy serverless bots which use WebServa keyspaces for config, state, monitoring, storage, etc.
 
 We guarantee that you will be able do data dumps, activate HTTP redirects etc, to facilitate data migration at any time to yourselves or other providers. WebServa aims to align with the canonical API for a large set of Redis commands. We clearly indicate some custom commands, which you should avoid if possible.
 
@@ -368,6 +369,25 @@ The `demo` domain has its own database, but otherwise all subdomains access the 
  - `replica` - read-only replica (hot data) with optional client authentication
  - `cdn` - read-only cached replica (warm data)
  - `archive` - read-only disk-based archive to recover cold data
+
+#### What are "perspectives" of keyspaces? 
+
+A "perspective" is a specific transformation of a keyspace into a web view. Currently we support:
+- HTML - browser admin console with hints etc
+- JSON - the Redis result is sent as a JSON HTTP response (string, array or object)
+- CLI script (curl wrapper) 
+
+The desired perspective is indicated by the domain e.g. `json.webserva.com` and other means e.g. query string:
+- `?html` - default HTML view
+- `?json` - reply with JSON
+- `?plain` - return plain text for the `bash` CLI (default curl user agent)
+
+In the longer term, we wish to support specific "perspectives" on keyspaces:
+- schema - specifies required data elements for a class of keyspaces
+- HTML forms - edit and validate hash fields according to a specified schema
+- Tabular data - e.g. for rendering consumption reports and account statements
+- charts - for rendering dashboards of pre-defined metrics
+- Schema.org content - for rendering blog articles according to a specified template
 
 #### How do I trust your server cert?
 
