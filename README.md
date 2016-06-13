@@ -272,7 +272,8 @@ The more free accounts we have, the happier I'll be, that my efforts are not in 
 
 That is a very good question. I guess it would have to be compelling for a specific niche, e.g. Telegram bots. 
 
-An important guarantee is that WebServa.com is all built with opensource software, including our Node server, that anyone can run themselves.
+An important guarantee is that WebServa.com is all built with opensource software, including our Node server that anyone can run themselves.
+It's not rocket science, just an HTTPS interface to Redis, with access control and accounting.
 
 Another guarantee is that you can do data dumps, activate HTTP redirects etc, to facilitate data migration at any time to yourselves or other providers that might exist. Further that we would support competitive providers, in the consumers' interest.
 
