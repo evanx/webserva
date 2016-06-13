@@ -41,8 +41,8 @@ So sign up and imagine some cool use cases for storing data in memory in the clo
 Note that client certs are:
 - self-signed e.g. created using `openssl` with your account name as the Organisation (O name)
 - the Organisational Unit (OU name) is the role of the cert e.g. `admin` or `webuser`
-- Our bot will advise the URL of a custom bash script to create client certs using `openssl`
 - client certs are authorised by account admins via our Telegram.org bot
+- Our bot will advise the URL of a custom bash script to create client certs using `openssl`
 
 <img src='http://evanx.github.io/images/rquery/rh-curl.png'/>
 
@@ -51,20 +51,19 @@ Documentation: https://github.com/evanx/rquery
 #### Technical Notes
 
 Technically speaking, WebServa is an Nginx deployment of our opensource Node webserver for Redis multi-tenancy and access control.
+It is resource for web apps, mobile and IoT devices.
 It is intended to be highly-available for reads via CDN, and also for writes, via Redis Cluster.
-It is available to client and server, web and mobile apps, authenticated and open.
-We define "open" as no client cert required, and "secure" as requiring a client cert.
 
 A client accessing a keyspace might be:
-- our `rhcurl` bash CLI which is `curl` wrapper
+- our `curl` bash CLI wrapper script
 - the WebServa.com web console
-- a client-side webapp fetching content
+- a client-side web app fetching content and messages
 - mobile app e.g. updating the state of a multi-player game
 - internet-connected device e.g. submitting metrics, error and status reports
-- orchestration service for scheduling microservices
 - microservice discovering its configuration
-- server-side script to record append-only events offsite
-- server-side app e.g. communicating with with external partners
+- server-side script to push operational status updates into a central hub
+- server-side script to record security events offsite into an append-only keyspace
+- server-side app communicating with with external partners via shared keyspaces
 
 ### Status
 
