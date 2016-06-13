@@ -272,17 +272,24 @@ The more free accounts we have, the happier I'll be, that my efforts are not in 
 
 That is a very good question. I guess it would have to be compelling for a specific niche, e.g. Telegram bots. 
 
-An important guarantee is that WebServa.com is all built with opensource software, including our Node server that anyone can run themselves.
-It's not rocket science, just an HTTPS interface to Redis, with access control and accounting.
-
-Another guarantee is that you can do data dumps, activate HTTP redirects etc, to facilitate data migration at any time to yourselves or other providers that might exist. Further that we would support competitive providers, in the consumers' interest.
-
 Incidently, as it happens we intend to build a basic bot platform on WebServa in the coming months, i.e. a bot to deploy serverless bots which use a serverless database, which is itself managed via a bot :)
+
+We guarantee that you will be able do data dumps, activate HTTP redirects etc, to facilitate data migration at any time to yourselves or other providers. WebServa aims to align with the canonical API for a large set of Redis commands. We clearly indicate some custom commands, which you should avoid if possible.
+
+We also guarantee is that WebServa only requires opensource software, 
+including our Node server that anyone can run themselves.
+Our server is essentially just an HTTP interface to Redis, with access control and accounting functions for multi-tenancy.
+We will provide a dedicated-account profile for the app soon e.g. where unnecessary accounting functions are disabled.
+
+Then the same WebServa `npm` installation that you might run for offline development, 
+you can deploy for production on your own infrastructure. 
+All that changes on the client side is that the domain must be changed e.g. from `WebServa.com` to your domain. In the meantime, we'll HTTP redirect client requests for you. 
 
 
 #### What about higher volume usage?
 
-Users who wish to exceed the above-mentioned free limits, should become a "funder" contributing the equivalent of 50c per month to our Bitcoin wallet. Funders' limits are bumped up to 30MB RAM (Redis) storage and 30Gb transfer per month. You can double up as needed and contribute accordingly, e.g. $5 for 300MB, $50 for 3GB.
+Users who wish to exceed the above-mentioned free limits, should become a "funder" contributing the equivalent of 50c per month to our Bitcoin wallet. Funders' limits are 50MB RAM (Redis) storage. You can multiply as needed and contribute accordingly, e.g. $5 for 500MB.
+
 
 #### What value length limits?
 
