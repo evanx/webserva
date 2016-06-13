@@ -16,7 +16,7 @@ The goals of WebServa are:
 - access control to keyspaces and their keys
 - web publication of data and views
 
-WebServa is a fast web database of structured textual data and JSON, not media and web asset artifacts. For example, your videos and images might be hosted on YouTube.com and Cloudinary.com. Their IDs might be stored in WebServa for the purpose of rendering HTML views that reference such assets via URL.
+WebServa is a fast web database of structured textual data and JSON, not media and web asset artifacts. For example, your videos and images might be hosted on YouTube.com and Cloudinary.com. Their URIs might be stored in WebServa for the purpose of rendering HTML views that reference such assets via URL.
 
 #### Accounts
 
