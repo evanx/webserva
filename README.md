@@ -223,16 +223,23 @@ One is always vulnerable to minor "disasters," the most common of which are appl
 Recovery procedures are always necessary, not least to handle network errors.
 
 In my experience, SQL does not enable fast websites, and most companies use a secondary Redis cache to mitigate this. 
-An argument can be made that Redis be the primary data store for your site, and disk-based solutions are used for secondary persistence, e.g. for the "archival" of historical and transactional data, to ensure its durability.
+An argument can be made that Redis be the primary data store for your site, and disk-based solutions are used for secondary persistence, e.g. for the "archival" of historical and transactional data, to ensure durability where this is specifically required.
 
 WebServa intends to build a simple and fast web database via HTTPS, where the durability status of your transaction can be confirmed via URL query:
 - for each transaction we increment a transaction ID, and we record recent transactions individually
 - a query to `replica.webserva.com` can confirm that it has been replicated to another machine
 - a query to `archive.webserva.com` can confirm that it has been permanently archived to disk
 
-This mechanism provides a durability guarantee. Importantly, it also provides a mechanism for retries, i.e. when database updates time out on the client side. If the server did receive and process the request, but the reply was not received by the client, then clearly it should avoid executing the update again. This is especially true if the command pushes to value a list, that should not be duplicated. The server should ideally reply with the original response, to simplify recovery from network errors. This requires caching the response of each transaction for some time e.g. 10 minutes. After that deadline, WebServa can only confirm that the transaction was processed recently or not e.g. the past 24 hours, but not advise of the original response. 
+This mechanism provides a durability guarantee. 
+Importantly, it also provides a mechanism for retries, i.e. when a database update times out on the client side. 
+If the server did receive the request, but the reply was not received by the client, then clearly it should avoid executing the update again. 
+This is especially true if the command pushes to value a list, that should not be duplicated. 
 
-Typically a client app might reverse a transaction when not confirmed after some minutes. For example, a waiting customer orders a product through an ecommerce app or point-of-sale terminal, but due to network errors at the time, the transaction write request times out, as do subsequent retries. Since the app cannot confirm that the transaction is durable, it cancels transaction to the customer, i.e. does not deliver the order to the customer, and records this in local storage. Later when the network is restored, the app confirms that the transaction was never received by the server. However it was received and committed by the server, then the app reverses the transaction, to reflect what actually happenedi during the outtage, i.e. the order was cancelled.
+Typically a client app might reverse a transaction when not confirmed. For example, consider a shopping cart app. 
+A waiting customer orders a product through an ecommerce app or point-of-sale terminal. 
+However network errors at the time cause the original transaction write request to time out, and a subsequent retry. 
+Since the app cannot confirm that the transaction is recorded, it cancels transaction to the customer, i.e. does not deliver the order to the customer. 
+The app should record unconfirmed cancellations in local storage and retry those indefinitely. When the network is restored, the app confirms that each cancelled transaction was never received by the server. If it was received and committed by the server, then the app reverses the transaction, to reflect what actually happened on the client side during the network outtage, i.e. the order was cancelled. We will provide an example implementation of this use-case, e.g. a client-side JavaScript shopping cart app.
 
 
 #### Why use a hosted Redis service rather than one's own?
