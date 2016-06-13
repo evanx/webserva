@@ -257,10 +257,6 @@ I wish to experiment with orchestrating Redis instances, clusters and replicas, 
 
 The platform should handle identity, auth, configuration, deployment, logging, messaging, monitoring and scaling. A notable simplication is that Redis will be used across the board for all these concerns.
 
-#### Why would a developer use an indie service which might become abandonware?
-
-That is a very good question. I guess it would have to be compelling for a specific niche, e.g. Telegram bots.
-
 #### What is free?
 
 I want to offer a free public utility in perpetuity to support most low-volume use cases, where the computing cost is less than 10c per user per month, e.g. peak database size of 10MB RAM with a 10Gb transfer limit per month. Currently, early adopters get 50MB free for 6 months, after which they should contribute 50c per month.
@@ -271,6 +267,17 @@ We use Digital Ocean infrastructure costs as a market indicator, and price our s
 This reflects our strategic vision to build a public utility, using our cost-free resources, namely myself.
 Incidently, we intend to use multiple 64GB servers that cost $80 a month, to accomodate thousands of free accounts, e.g. for Indie developers.
 The more free accounts we have, the happier I'll be, that my efforts are not in vain.
+
+#### Why would a developer use an indie service which might become abandonware?
+
+That is a very good question. I guess it would have to be compelling for a specific niche, e.g. Telegram bots. 
+
+An important guarantee is that WebServa.com is all built with opensource software, including our Node server, that anyone can run themselves.
+
+Another guarantee is that you can do data dumps, activate HTTP redirects etc, to facilitate data migration at any time to yourselves or other providers that might exist. Further that we would support competitive providers, in the consumers' interest.
+
+Incidently, as it happens we intend to build a basic bot platform on WebServa in the coming months, i.e. a bot to deploy serverless bots which use a serverless database, which is itself managed via a bot :)
+
 
 #### What about higher volume usage?
 
