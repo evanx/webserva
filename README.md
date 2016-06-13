@@ -217,7 +217,21 @@ Atomicity, consistency, isolation and durability guarantees are those offered by
 
 We wish to support maximally durable transactions since this is an important use case e.g. to record financial transactions using PostgreSQL. However, I wish firstly to address web content, messaging and analytics use cases, optionally trading off performance for database size using ssdb.io, or performance for durability using PostgreSQL.
 
-Incidently, as an former PostgreSQL DBA for a SaaS application, I'm not convinced that absolute durability is as important as performance. One is always vulnerable to minor "disasters," the most common of which are application and configuration errors. Often application load necessitates tweaking RAID settings to boost performance at the cost of durability.
+Incidently, as an former PostgreSQL DBA for a financial SaaS application, I'm not convinced that absolute durability is as important as performance. One is always vulnerable to minor "disasters," the most common of which are application and configuration errors, rather than server crashes, and so recovery procedures are always necessary. Often application load necessitates tweaking RAID settings to boost performance at the cost of durability.
+
+In my experience, SQL does not enable fast websites, and most companies use a secondary Redis cache to overcome this. An argument can be made that Redis be the primary data store for your site, and disk-based solutions are used for secondary persistence, e.g. for the "archival" of historical data.
+
+WebServa intends to build a simple and fast web database via HTTPS, where the durability status of your transaction can be confirmed via URL query:
+- for each transaction we increment a transaction ID, and we record recent transactions individually
+- a query to `replica.webserva.com` can confirm that it has been replicated to another machine
+- a query to `archive.webserva.com` can confirm that it has been permanently archived to disk
+
+This mechanism provides a durability guarantee. Incidently, it also provides a mechanism for retries, which you only wish to be to executed if the server never received the original request, which timed out. 
+
+If it did process the request, but the reply was not received by the client, then clearly it should avoid executing the update again. This is especially true if the command pushes to value a list, that should not be duplicated. It should however reply with the original response. This requires caching the response of each transaction for some time e.g. 10 minutes. After that deadline, WebServa can only confirm that the transaction was processed recently or not e.g. the past 24 hours, but not advise of the original response. 
+
+Typically a client app might reverse a transaction when not confirmed after some minutes. For example, a waiting customer orders a product through an ecommerce app or point-of-sale terminal, but due to network errors at the time, the transaction write request times out, as do subsequent retries. Since the app cannot confirm that the transaction is durable, it cancels transaction to the customer, i.e. does not deliver the order to the customer, and records this in local storage. Later when the network is restored, the app confirms that the transaction was never received by the server. However it was received and committed by the server, then the app reverses the transaction, to reflect what actually happenedi during the outtage, i.e. the order was cancelled.
+
 
 #### Why use a hosted Redis service rather than one's own?
 
