@@ -39,8 +39,7 @@ So sign up and imagine some cool use cases for storing data in memory in the clo
 
 Incidently, we will introduce a standard keyspace role `submitter` which can append to a list, set a new field, 
 and perform some other aggregating commands. 
-However it cannot perform any other mutative commands, 
-and cannot access keys created by other submitters. 
+However it cannot access data created by other submitters. 
 This is potentially useful for registries, message hubs and metrics aggregators.
 
 <img src='http://evanx.github.io/images/rquery/rh.png'/>
