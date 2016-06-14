@@ -37,13 +37,17 @@ So sign up and imagine some cool use cases for storing data in memory in the clo
 - private access is via client certs you have authorised on your account
 - you can publish specific keyspaces for read-only web access via CDN
 
-Incidently, we will introduce an keyspace role which can append to a list, set a new field, and perform some other aggregating commands, but not perform any other mutative commands on existing keys created by other parties. This is potentially useful for registries, message hubs and metrics aggregators.
+Incidently, we will introduce a standard keyspace role `submitter` which can append to a list, set a new field, 
+and perform some other aggregating commands. 
+However it cannot perform any other mutative commands, 
+and cannot access keys created by other submitters. 
+This is potentially useful for registries, message hubs and metrics aggregators.
 
 <img src='http://evanx.github.io/images/rquery/rh.png'/>
 
 Note that client certs are:
 - self-signed e.g. created using `openssl` with your account name as the Organisation (O name)
-- the Organisational Unit (OU name) is the role of the cert e.g. `admin` or `webuser`
+- the Organisational Unit (OU name) is the role of the cert e.g. `admin` or `submitter`
 - client certs are authorised by account admins via our Telegram.org bot
 - Our bot will advise the URL of a custom bash script to create client certs using `openssl`
 
