@@ -52,6 +52,11 @@ Note that client certs are:
 
 <img src='http://evanx.github.io/images/rquery/rh-curl.png'/>
 
+Incidently, we will introduce a mechanism for auto-enrolling client certs. 
+A special keyspace might be used set enrollment tokens for a certain role and client ID on your account. 
+Certs professing your account (via their O name), matching the designated role (OU) for that client ID (CN), 
+and bearing the matching enrollment token, can auto-enroll their self-signed cert.
+
 Documentation: https://github.com/evanx/rquery
 
 #### Technical Notes
