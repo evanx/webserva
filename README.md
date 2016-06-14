@@ -32,11 +32,12 @@ Your account can be topped up via virtual currency where "50MB" bundles are pric
 This is determined from Digital Ocean infrastructure costs, as a market indicator.
 
 So sign up and imagine some cool use cases for storing data in memory in the cloud, publishable in volume via CDN, or kept private:
-- "open" keyspaces have a randomly-generated name that you can keep secret, or share
+- ephemeral keyspaces have a randomly-generated name to be secret by default, but sharable
 - keyspaces you create on account are private by default
 - private access is via client certs you have authorised on your account
 - you can publish specific keyspaces for read-only web access via CDN
-- "permutable" keyspaces can be shared e.g. for registries, message hubs and metrics aggregators
+
+Incidently, we will introduce an keyspace role which can append to a list, set a new field, and perform some other aggregating commands, but not perform any other mutative commands on existing keys created by other parties. This is potentially useful for registries, message hubs and metrics aggregators.
 
 <img src='http://evanx.github.io/images/rquery/rh.png'/>
 
