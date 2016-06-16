@@ -354,7 +354,7 @@ Note that clients should follow HTTP redirects to the above domains when reading
 
 As soon as warranted, we look forward to deploying Redis Clusters on multiple 64GB dedicated machines in multiple regions.
 
-Incidently, early adopters who pay for more resources e.g. 50c per 32MB RAM, will become co-owners of WebServa via a sharepool. The shareholding of the pool will be computed by an algorithm.
+Incidently, early adopters who pay for more resources e.g. 50c per 50MB RAM, will become co-owners of WebServa via a sharepool. The shareholding of the pool will be computed by an algorithm.
 
 #### What financial technology is planned?
 
