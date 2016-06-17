@@ -16,7 +16,9 @@ See http://redis.io.
 
 You store data by key in a "keyspace," and can use lists, sets and sorted sets to keep track of things. There is more to come e.g. geographical data courtesy of Redis 3.2.
 
-Try our demo: https://demo.webserva.com/create-ephemeral. This endpoint creates a new ephemeral keyspace with a TTL of 10 minutes, for demonstration purposes. This keyspace is assigned a randomized name, so that it is secret by default.
+Try our demo: https://demo.webserva.com/create-ephemeral. 
+
+This endpoint creates a new ephemeral keyspace with a TTL of 10 minutes, for demonstration purposes. This keyspace is assigned a randomized name, so that it is secret by default.
 
 <img src='http://evanx.github.io/images/rquery/redishub-welcome.png'/>
 
