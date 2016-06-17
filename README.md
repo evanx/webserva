@@ -6,7 +6,7 @@
 
 17 June: Apologies for those that tried to signup before without success. 
 The bug was that the bot was failing when your Telegram.org username was not set, e.g. you logged into the Telegram using your mobile number, but did not take the extra step of setting a Telegram username (under Settings, via hamburger menu on Telegram). 
-Now the bot should return a message prompting you to set your Telegram username first, then try `@redishub_bot /signup.
+Now the bot should return a message prompting you to set your Telegram username first, then try `@redishub_bot /signup.`
 
 #### Overview 
 
