@@ -2,6 +2,8 @@
 
 <i>Note that this service is currently being rebranded from <b>RedisHub.com to WebServa.com</b>. The RedisHub.com and WebServa.com home page and `/about` are redirected to this page.</i>
 
+<i>Apologies for those that tried to signup before without success. There was a bug on the Telegram bot whereby the bot was failing when Telegram.org username was not set, e.g. you logged into the Telegram using your mobile number, but did not take the extra step of setting a username. Now the bot should return a message prompted you to set your Telegram username first, then `@redishub_bot /signup.`</i>
+
 WebServa is a provider of serverless "keyspaces" we might be described as "web databases." It is cloud resource intended for web apps, mobile and IoT devices. 
 Technically speaking, it offers a client-authenticated HTTPS API with a subset of Redis commands for accessing virtual Redis servers.
 See http://redis.io.
