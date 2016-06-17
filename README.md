@@ -149,6 +149,10 @@ Redis is a popular and awesome NoSQL database. It's in-memory and so really fast
 
 Having said that, I love SQL too and may use PostgreSQL to drive `pg.webserva.com` e.g. where each command is saved in a PostgreSQL record like `{account, keyspace, key, command, params}` which can be replayed for point-in-time recovery.
 
+#### Any query languages?
+
+We are considering experimenting with GraphQL as soon as time permits.
+
 #### But isn't Redis just for caching?
 
 Certainly Redis is the leading caching server. But actually Redis is an in-memory "data structure server." As such, it has many use cases, including fast shareable data storage, analytics, geo-spatial processing, synchronisation, queuing and messaging.
