@@ -39,7 +39,7 @@ WebServa is a fast web database of structured textual data and JSON, not media a
 
 You can signup via our Telegram bot `@redishub_bot` via the command `/signup.` This will create an account as per your Telegram username. It will advise how to create an a client cert for https://secure.redishub.com/routes, and how to install our CLI `rhcurl` bash script. This is a wrapper of `curl` using your cert.
 
-<img src='http://evanx.github.io/images/rquery/rhbot-signup.png'/>
+![Bot signup](http://evanx.github.io/images/rquery/rhbot-signup.png)
 
 Our "50MB" service is free. This service bundle is limited to 50MB peak RAM and 20GB monthly transfer. 
 So for example, you can store 1 million records averaging 50 characters each, on us. 
@@ -57,7 +57,7 @@ and perform some other aggregating commands.
 However it cannot access data created by other submitters. 
 This is potentially useful for registries, message hubs and metrics aggregators.
 
-<img src='http://evanx.github.io/images/rquery/rh.png'/>
+![Curl command line wrapper](http://evanx.github.io/images/rquery/rh.png)
 
 Note that client certs are:
 - self-signed e.g. created using `openssl` with your account name as the Organisation (O name)
@@ -65,7 +65,7 @@ Note that client certs are:
 - client certs are authorised by account admins via our Telegram.org bot
 - Our bot will advise the URL of a custom bash script to create client certs using `openssl`
 
-<img src='http://evanx.github.io/images/rquery/rh-curl.png'/>
+![Curl command line wrapper](http://evanx.github.io/images/rquery/rh-curl.png)
 
 Incidently, we will introduce a mechanism for auto-enrolling client certs. 
 A special keyspace might be used set enrollment tokens for a certain role and client ID on your account. 
@@ -136,7 +136,7 @@ For example, in the following screenshot, you would click anywhere on top row co
 - the "hub" account name
 - the ephemeral keyspace label
 
-<img src='http://evanx.github.io/images/rquery/redishub-welcome.png'/>
+![Landing page](http://evanx.github.io/images/rquery/redishub-welcome.png)
 
 Incidently, "hub" is the specially named "open" account name, i.e. accessed without a cert. It is available for limited writes at this time, at least while not victim to DoS or some sudden overload.
 
