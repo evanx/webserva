@@ -1,7 +1,7 @@
 
 #### How to create a client cert
 
-You can use our `bash` cert creation script using your account name, as per https://telegram.me/redishub_bot
+You can use our `bash` cert creation script using your account name, as per https://telegram.me/WebServaBot
 
 Our bot will propose a bash script rendered with your account name, as per the authoratitive Telegram.org username.
 
@@ -84,9 +84,9 @@ where we fetch https://raw.githubusercontent.com/evanx/redishub/master/bin/cert-
       pwd; ls -l
       sleep 2
       curl -s https://redishub.com/cert-script-help/${account}
-      curl -s https://raw.githubusercontent.com/evanx/redishub/master/docs/install.wscurl.txt
+      curl -s https://raw.githubusercontent.com/webserva/webserva/master/docs/install.wscurl.txt
       certExtract=`cat cert.extract.pem`
-      echo "Try https://telegram.me/redishub_bot '/grantcert $certExtract'"
+      echo "Try https://telegram.me/WebServaBot '/grantcert $certExtract'"
     fi
   fi
 ```
