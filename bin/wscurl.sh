@@ -117,7 +117,7 @@ kshelp() {
   wsinfo "Try the following commands:"
   wsinfo "ws keyspaces"
   wsinfo "ws $keyspace create-keyspace # if new"
-  wsinfo "ws $keyspace \$command \$key ...params # e.g. set, get, sadd, hgetall et al"
+  wsinfo "ws $keyspace \$command \$key ...params # e.g. set, get, sadd, smembers, hset, hgetall et al"
   wsinfo "ws $keyspace ttl \$key"
   wsinfo "ws routes # more online help"
   wsdebug "curl -s -E ~/.webserva/live/privcert.pem https://$domain/ak/$account/$keyspace"
