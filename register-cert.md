@@ -1,7 +1,7 @@
 
 #### How to create a client cert
 
-<b>Please redirect to /docs/register-cert.md</b>
+<b>Please be redirected to: https://github.com/webserva/webserva/blob/master/docs/register-cert.md</b>
 
 You can use our `bash` cert creation script using your account name, as per https://telegram.me/redishub_bot
 
