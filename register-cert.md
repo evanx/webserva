@@ -1,35 +1,37 @@
 
-#### How to create a client cert 
+#### How to create a client cert
+
+<b>Please redirect to /docs/register-cert.md</b>
 
 You can use our `bash` cert creation script using your account name, as per https://telegram.me/redishub_bot
 
 Our bot will propose a bash script rendered with your account name, as per the authoratitive Telegram.org username.
 
-``shell
+```shell
 curl -s https://webserva.com/cert-script/ACCOUNT
 ```
 where you should substitute `ACCOUNT` for your RedisHub account name i.e. Telegram.org username.
 
 In general, we recommend reviewing any script first before executing it as follows:
-``shell
+```shell
 curl -s https://webserva.com/cert-script/ACCOUNT | bash
 ```
 
 To see the commands being executed including `openssl` you can use `bash -x` as follows:
-``shell
+```shell
 curl -s https://webserva.com/cert-script/ACCOUNT | bash -x
 ```
 
 Query paramaters include:
 - `id` - the client cert id e.g. `admin`
 - `role` - the client cert tole e.g. `admin`
-- `archive` - archive `~/.webserva/live` to `~/webserva/archive/TIMESTAMP` 
+- `archive` - archive `~/.webserva/live` to `~/webserva/archive/TIMESTAMP`
 
 The content of this script is as follows when run with a placeholder `ACCOUNT` account name:
 ```shell
 # Curl this script and pipe into bash as follows to create key dir ~/.redishub/live:
 # curl -s 'https://secure.redishub.com/cert-script/ACCOUNT' | bash
-# 
+#
 (
   set -u -e
   account='ACCOUNT'
@@ -51,10 +53,10 @@ The content of this script is as follows when run with a placeholder `ACCOUNT` a
     echo "Directory ~/.webserva/live already exists. Try add '?archive' query to the URL."
   else
     mkdir ~/.webserva/live && cd $_ # error exit if dir exists
-    curl -s https://raw.githubusercontent.com/evanx/redishub/master/bin/cert-script.sh -O
+    curl -s https://raw.githubusercontent.com/webserva/webserva/master/bin/cert-script.sh -O
     cat cert-script.sh
     sha1sum cert-script.sh
-    curl -s https://redishub.com/assets/cert-script.sh.sha1sum
+    curl -s https://webserva.com/assets/cert-script.sh.sha1sum
     echo 'Press Ctrl-C in the next 8 seconds if the above hashes do not match'
     sleep 8
     source <(cat cert-script.sh)
@@ -84,14 +86,14 @@ where we fetch https://raw.githubusercontent.com/evanx/redishub/master/bin/cert-
       pwd; ls -l
       sleep 2
       curl -s https://redishub.com/cert-script-help/${account}
-      curl -s https://raw.githubusercontent.com/evanx/redishub/master/docs/install.rhcurl.txt
+      curl -s https://raw.githubusercontent.com/evanx/redishub/master/docs/install.wscurl.txt
       certExtract=`cat cert.extract.pem`
       echo "Try https://telegram.me/redishub_bot '/grantcert $certExtract'"
     fi
   fi
 ```
 
-### How to register a client cert 
+### How to register a client cert
 
 ```shell
 curl -E ~/.webserva/privcert.pem https://secure.webserva.com/register-cert
@@ -103,4 +105,3 @@ curl -E ~/.webserva/privcert.pem https://secure.webserva.com/register-cert
 ```shell
 openssl x509 -text -in ~/.webserva/live/privcert.pem | grep 'CN='
 ```
- 

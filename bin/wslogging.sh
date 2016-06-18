@@ -1,9 +1,9 @@
 
 wsinit() {
-  if [ -z "${BASH-}" ] 
+  if [ -z "${BASH-}" ]
   then
     >&2 echo 'Please use bash shell!'
-    if [ $0 = 'bash' ] 
+    if [ $0 = 'bash' ]
     then
       return 3
     else
@@ -100,16 +100,16 @@ wssub() {
   wsinfo "$*"
 }
 
-declare -A ErrorCodes=( 
-  [GENERAL]=1 [ENV]=3 [PARAM]=4 [APP]=5 
+declare -A ErrorCodes=(
+  [GENERAL]=1 [ENV]=3 [PARAM]=4 [APP]=5
 )
 
 # command: wsabort $code $*
 # example: wsabort 1 @$LINENO "error message" $some
-# specify 1 (default) to limit 254. 
+# specify 1 (default) to limit 254.
 # Ideally use 3..63 for custom codes
 # We use 3 for ENV errors (a catchall for system/dep/env), 4 for subsequent APP errors
-# returns nonzero code e.g. for scripts with set -e 
+# returns nonzero code e.g. for scripts with set -e
 wsabort() {
   local code=1
   if [ $# -gt 0 ]
@@ -117,7 +117,7 @@ wsabort() {
     if echo "$1" | grep -q '^[A-Z]\S*$'
     then
       local errorCode="${ErrorCodes[$1]}"
-      wsdebug errorCode $1 $errorCode 
+      wsdebug errorCode $1 $errorCode
       if [ "$errorCode" -gt 0 ]
       then
         code=$errorCode
@@ -143,7 +143,7 @@ wsabort() {
     if echo "$1" | grep -q 'Try: '
     then
       wsinfo 'Try: '
-      wsinfo "`echo "$1" | cut -b6-199`" 
+      wsinfo "`echo "$1" | cut -b6-199`"
       shift
     fi
   fi

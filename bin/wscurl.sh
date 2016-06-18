@@ -14,7 +14,7 @@ shellArgs="${*}"
 . ~/webserva/bin/wslogging.sh
 
 tmp=~/.ttl/webserva/days/1
-if [ ! -d $tmp ] 
+if [ ! -d $tmp ]
 then
   wsalert "Creating tmp directory: mkdir -p $tmp"
   wsinfo "Press Ctrl-C to abort, or Enter to continue..."
@@ -27,7 +27,7 @@ fi
 trap_error() {
   local code="${1}"
   local lineno="$2"
-  if [ $code -lt 63 ] 
+  if [ $code -lt 63 ]
   then
     wserror "line $lineno: error code $code"
     wsalert "Try using bash -x as follows:"
@@ -36,15 +36,15 @@ trap_error() {
 }
 
 trap_sigint() {
-  find ~/.bashbin/ttl/days/1 -type f -mtime +1 -delete 
+  find ~/.bashbin/ttl/days/1 -type f -mtime +1 -delete
 }
 
 trap_sigterm() {
-  find ~/.bashbin/ttl/days/1 -type f -mtime +1 -delete 
+  find ~/.bashbin/ttl/days/1 -type f -mtime +1 -delete
 }
 
 trap trap_sigint SIGINT
-trap trap_sigterm SIGTERM 
+trap trap_sigterm SIGTERM
 trap 'trap_error $? ${LINENO}' ERR
 
 account=''
@@ -176,7 +176,7 @@ wscurl() {
         return 4
       fi
     fi
-    cat $tmp/routes | grep '^accountKeyspace:' -B99 
+    cat $tmp/routes | grep '^accountKeyspace:' -B99
     cat $tmp/routes | grep '^accountKeyspace:' -A99 |
       sed -n 's/^\/ak\/:account\/:keyspace\/\([a-z][-a-z]*\)$/\1/p' | tr '/' ' '
     cat $tmp/routes | grep '^accountKeyspace:' -A99 |
