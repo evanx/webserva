@@ -440,6 +440,9 @@ $ curl --cacert ~/.cacerts/letsencrypt/isrgrootx1.pem.txt https://cli.webserva.c
 
 See: https://letsencrypt.org/2015/06/04/isrg-ca-certs.html
 
+### Why is this page so wordy?
+
+I use it to express and refine my ideas and plans :)
 
 ### Goals
 
