@@ -2,7 +2,7 @@
 ### How to register a client cert 
 
 ```shell
-curl -E ~/.webserva/privcert.pem https://secure.webserva.com/register-cert
+curl -E ~/.webserva/live/privcert.pem https://secure.webserva.com/register-cert
 ```
 
 #### Troubleshooting
