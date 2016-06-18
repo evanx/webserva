@@ -12,7 +12,12 @@ Now the bot should return a message prompting you to set your Telegram username 
 
 WebServa is a provider of serverless "keyspaces" we might be described as "web databases." It is cloud resource intended for web apps, mobile and IoT devices. 
 Technically speaking, it offers a client-authenticated HTTPS API with a subset of Redis commands for accessing virtual Redis servers.
-See http://redis.io.
+See http://redis.io. It is essentially a deployment of Nginx to access a Redis keyspace with multi-tenancy and access control via our opensource Node server: 
+- Our server is an integration layer between Nginx and Redis for multi-tenancy and access control
+- Private access is via HTTPS using self-signed client certs e.g. generated with `openssl`
+- Built-in Telegram.org bot for two-factor identity authentication of account admins
+- Use the bot to control access to your keyspaces e.g. generate/grant/revoke certs
+- CDN courtesy of awesome CloudFlare.com for optionally publishing keyspaces for mass consumption
 
 You store data by key in a "keyspace," and can use lists, sets and sorted sets to keep track of things. There is more to come e.g. geographical data courtesy of Redis 3.2.
 
