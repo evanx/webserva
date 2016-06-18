@@ -94,7 +94,7 @@ UNSTABLE, INCOMPLETE
 
 ### How usable?
 
-It's MVP for small ephemeral keyspaces, where keys idle out after 10 days. 
+It's MVP for small ephemeral keyspaces, where keys idle out after 10 days. We are preparing for a MVP soft launch via Twitter announcement, once the rebranding migration is complete.
 
 Archiving has not been implemented, and `PERSIST` is not available.
 Hence we only support ephemeral keyspaces.
