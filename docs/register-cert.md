@@ -2,12 +2,12 @@
 ### How to register a client cert 
 
 ```shell
-curl -E ~/.redishub/privcert.pem https://secure.redishub.com/register-cert
+curl -E ~/.webserva/privcert.pem https://secure.webserva.com/register-cert
 ```
 
 #### Troubleshooting
 
 ```shell
-openssl x509 -text -in ~/.redishub/live/privcert.pem | grep 'CN='
+openssl x509 -text -in ~/.webserva/live/privcert.pem | grep 'CN='
 ```
  
