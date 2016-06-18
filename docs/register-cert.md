@@ -27,8 +27,8 @@ Query paramaters include:
 
 The content of this script is as follows when run with a placeholder `ACCOUNT` account name:
 ```shell
-# Curl this script and pipe into bash as follows to create key dir ~/.redishub/live:
-# curl -s 'https://secure.redishub.com/cert-script/ACCOUNT' | bash
+# Curl this script and pipe into bash as follows to create key dir ~/.webserva/live:
+# curl -s 'https://open.webserva.com/cert-script/ACCOUNT' | bash
 #
 (
   set -u -e
