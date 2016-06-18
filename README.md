@@ -25,7 +25,7 @@ Try our demo: https://demo.webserva.com/create-ephemeral.
 
 This endpoint creates a new ephemeral keyspace with a TTL of 10 minutes, for demonstration purposes. This keyspace is assigned a randomized name, so that it is secret by default.
 
-![Landing screenshot](http://evanx.github.io/images/rquery/redishub-welcome.png)
+![Landing screenshot](http://evanx.github.io/images/rquery/ws040-ephemeral.png)
 
 The goals of WebServa are:
 - instant virtual Redis servers
