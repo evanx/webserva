@@ -136,7 +136,7 @@ For example, in the following screenshot, you would click anywhere on top row co
 - the "hub" account name
 - the ephemeral keyspace label
 
-![Landing page](http://evanx.github.io/images/rquery/redishub-welcome.png)
+![Create ephemeral](http://evanx.github.io/images/rquery/ws040-ephemeral.png)
 
 Incidently, "hub" is the specially named "open" account name, i.e. accessed without a cert. It is available for limited writes at this time, at least while not victim to DoS or some sudden overload.
 
