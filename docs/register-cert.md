@@ -5,18 +5,18 @@ You can use our `bash` cert creation script using your account name, as per http
 
 Our bot will propose a bash script rendered with your account name, as per the authoratitive Telegram.org username.
 
-``shell
+```shell
 curl -s https://webserva.com/cert-script/ACCOUNT
 ```
 where you should substitute `ACCOUNT` for your RedisHub account name i.e. Telegram.org username.
 
 In general, we recommend reviewing any script first before executing it as follows:
-``shell
+```shell
 curl -s https://webserva.com/cert-script/ACCOUNT | bash
 ```
 
 To see the commands being executed including `openssl` you can use `bash -x` as follows:
-``shell
+```shell
 curl -s https://webserva.com/cert-script/ACCOUNT | bash -x
 ```
 
