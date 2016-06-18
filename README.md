@@ -57,15 +57,13 @@ and perform some other aggregating commands.
 However it cannot access data created by other submitters. 
 This is potentially useful for registries, message hubs and metrics aggregators.
 
-![Curl command line wrapper](http://evanx.github.io/images/rquery/rh.png)
+![Curl command line wrapper](http://evanx.github.io/images/rquery/ws040-wscurl.png)
 
 Note that client certs are:
 - self-signed e.g. created using `openssl` with your account name as the Organisation (O name)
 - the Organisational Unit (OU name) is the role of the cert e.g. `admin` or `submitter`
 - client certs are authorised by account admins via our Telegram.org bot
 - Our bot will advise the URL of a custom bash script to create client certs using `openssl`
-
-![Curl command line wrapper](http://evanx.github.io/images/rquery/rh-curl.png)
 
 Incidently, we will introduce a mechanism for auto-enrolling client certs. 
 A special keyspace might be used set enrollment tokens for a certain role and client ID on your account. 
