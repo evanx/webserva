@@ -163,7 +163,13 @@ wscurl() {
   then
     wshelp
     return 253
-  elif [ "$1" = 'routes' ]
+  fi
+  arg1="$1"
+  if [ "${arg1:0:1}" = '/' ]
+  then
+    arg1="${arg1:1}"
+  fi
+  if [ "$arg1" = 'routes' ]
   then
     if [ -f $tmp/routes ]
     then
@@ -182,30 +188,30 @@ wscurl() {
     cat $tmp/routes | grep '^accountKeyspace:' -A99 |
       sed -n 's/^\/ak\/:account\/:keyspace\/\([a-z][-a-z]*\)\/\(.*\)$/\1 \2/p' | tr '/' ' ' | sed 's/://g'
     return $?
-  elif [ "$1" = 'keyspaces' ]
+  elif [ "$arg1" = 'keyspaces' ]
   then
     curlpriv https://$domain/keyspaces/$account
     return $?
-  elif [ "$1" = 'create-ephemeral' ]
+  elif [ "$arg1" = 'create-ephemeral' ]
   then
     curlpriv https://$domain/create-ephemeral
     return $?
-  elif [ "$1" = 'register-cert' ]
+  elif [ "$arg1" = 'register-cert' ]
   then
     curlpriv https://$domain/register-cert
     return $?
-  elif [ "$1" = 'create-account' -o "$1" = 'create-account-telegram' ]
+  elif [ "$arg1" = 'create-account' -o "$arg1" = 'create-account-telegram' ]
   then
     curlpriv https://$domain/create-account-telegram/$account
     return $?
   elif [ $# -eq 1 ]
   then
-    if echo "$1" | grep '^create$\|^create-keyspace\|^reg$\|^register$\|^register-keyspace$\|^help$' # TODO
+    if echo "$1" | grep '^/\|^create$\|^create-keyspace\|^reg$\|^register$\|^register-keyspace$\|^help$' # TODO
     then
       wshelp
       return 253
     else
-      kshelp $1
+      kshelp $arg1
       return 63
     fi
   fi
