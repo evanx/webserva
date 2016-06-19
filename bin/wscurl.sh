@@ -182,11 +182,13 @@ wscurl() {
         return 4
       fi
     fi
-    cat $tmp/routes | grep '^accountKeyspace:' -B99
-    cat $tmp/routes | grep '^accountKeyspace:' -A99 |
-      sed -n 's/^\/ak\/:account\/:keyspace\/\([a-z][-a-z]*\)$/\1/p' | tr '/' ' '
-    cat $tmp/routes | grep '^accountKeyspace:' -A99 |
-      sed -n 's/^\/ak\/:account\/:keyspace\/\([a-z][-a-z]*\)\/\(.*\)$/\1 \2/p' | tr '/' ' ' | sed 's/://g'
+    (
+      cat $tmp/routes | grep '^accountKeyspace:' -B99
+      cat $tmp/routes | grep '^accountKeyspace:' -A99 |
+        sed -n 's/^\/ak\/:account\/:keyspace\/\([a-z][-a-z]*\)$/\1/p' | tr '/' ' '
+      cat $tmp/routes | grep '^accountKeyspace:' -A99 |
+        sed -n 's/^\/ak\/:account\/:keyspace\/\([a-z][-a-z]*\)\/\(.*\)$/\1 \2/p' | tr '/' ' ' | sed 's/://g'
+    ) | less
     return $?
   elif [ "$arg1" = 'keyspaces' ]
   then
