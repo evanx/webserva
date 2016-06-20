@@ -12,7 +12,7 @@ where `ACCOUNT` is a placeholder for your Telegram.org username.
 
 Click on the link given by the bot with your Telegram.org name substituted already, to review the script, and copy its URL.
 
-![Cert script review](https://evanx.github.io/images/rquery/ws040-cert-script-review.png)
+![Cert script review](https://evanx.github.io/images/rquery/ws040-cert-script-curl.png)
 <hr>
 
 We recommend reviewing any script first <b>before</b> executing it.
