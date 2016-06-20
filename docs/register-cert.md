@@ -26,7 +26,7 @@ The custom script will execute the following:
 
 Having granted the cert via WebServaBot, invoke the endpoint https://secure.webserva.com/register-cert using the cert in one of these ways:
 - load `~/.webserva/live/privcert.p12` into your browser
-- try `curl -E ~/.webserva/live/privcert.pem https://secure.webserva.com/register-cert`
+- try `curl -E ~/.webserva/live/privcert.pem` https://secure.webserva.com/register-cert
 - equivalently, install our `wscurl` wrapper script and try `ws register-cert`
 
 Optional query paramaters for `/cert-script` include:
