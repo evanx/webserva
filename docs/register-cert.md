@@ -24,7 +24,7 @@ The custom script will execute the following:
 - advise how to install the `wscurl` wrapper script
 - advise you of the cert SHA to `/grantcert` via WebServaBot
 
-Having granted the cert via WebServaBot, invoke the endpoint https://secure.webserva.com/register-cert using the cert as follows:
+Having granted the cert via WebServaBot, invoke the endpoint https://secure.webserva.com/register-cert using the cert in one of these ways:
 - load `~/.webserva/live/privcert.p12` into your browser first
 - try `curl -E ~/.webserva/live/privcert.pem https://secure.webserva.com/register-cert`
 - install `wscurl` wrapper script and try `ws register-cert`
