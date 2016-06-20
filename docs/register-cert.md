@@ -133,6 +133,14 @@ Try the following:
 
 ![wscurl](https://evanx.github.io/images/rquery/ws040-wscurl.png)
 
+#### Dangerzone
+
+You should be able to remove all vestiges of the above from your machine as follows:
+
+```shell
+rm -rf ~/.webserva # contains private key matter
+rm -rf ~/webserva # clone of https://github.com/webserva/webserva
+```
 
 #### Troubleshooting
 
