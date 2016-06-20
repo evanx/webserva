@@ -2,11 +2,14 @@
 
 #### News 
 
+20 June: Rebranding complete - try https://demo.webserva.com
+
 11 June: Note that this service is currently being rebranded from <b>RedisHub.com to WebServa.com</b>. The RedisHub.com and WebServa.com home page and `/about` are redirected to this page.
 
 17 June: Apologies for those that tried to signup before without success. 
-The bug was that the bot was failing when your Telegram.org username was not set, e.g. you logged into the Telegram using your mobile number, but did not take the extra step of setting a Telegram username (under Settings, via hamburger menu on Telegram). 
-Now the bot should return a message prompting you to set your Telegram username first, then try `/signup` via the bot.
+The bug was that the bot was failing when your Telegram.org username was not set (under Settings, via hamburger menu on Telegram). 
+Now the bot should return a message prompting you to set your Telegram username first, then try `/signup` via the bot: 
+https://telegram.me/WebServaBot?start
 
 #### Overview 
 
