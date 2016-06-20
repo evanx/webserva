@@ -1,20 +1,16 @@
 
 #### How to create a client cert
 
-You can use our `bash` cert creation script using your account name, as per https://telegram.me/WebServaBot
+You can use our `bash` cert creation script using your account name, via https://telegram.me/WebServaBot
 
-Our bot will propose a bash script rendered with your account name, as per the authoratitive Telegram.org username.
+Our bot will propose a bash script rendered with your account name, as per your Telegram.org username.
 
 ```shell
 curl -s https://open.webserva.com/cert-script/ACCOUNT
 ```
-where you should substitute `ACCOUNT` for your RedisHub account name i.e. Telegram.org username.
+where `ACCOUNT` is a placeholder for your Telegram.org username.
 
-In general, we recommend reviewing any script first <b>before</b> executing it as follows:
-```shell
-curl -s https://open.webserva.com/cert-script/ACCOUNT 
-```
-Then if it looks OK, execute it as follows:
+where we recommend reviewing any script first <b>before</b> executing it as follows:
 ```shell
 curl -s https://open.webserva.com/cert-script/ACCOUNT | bash
 ```
