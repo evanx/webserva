@@ -40,17 +40,17 @@ Funders should be able to designate a price/volume of equity (if any) they are w
 
 This will be launched later. 
 - have a Telegram.org account e.g. via web.telegram.org
-- signup via `@redishub_bot` 
+- signup via `@WebServaBot` 
 - transfer 50c (0.001฿) to our Bitcoin wallet 
 
-Then you are a "Funder" with virtual equity in redishub.com. 
+Then you are a "Funder" with virtual equity in webserva.com. 
 
 
 #### How do I signup to RedisHub.com
 
-- message `@redishub_bot /signup`
+- message `@WebServaBot /signup`
 - create a self-signed client cert with a specified RedisHub OU 
-- register an account with `redishub.com` using your client cert
+- register an account with `open.webserva.com` using your client cert
 
 
 #### What is free?
@@ -63,13 +63,13 @@ I want to offer a free public utility in perpetuity to support most low-volume u
 Customers who wish to exceed the above-mentioned free limits, should become a "funder" contributing the equivalent of 50c per month to our Bitcoin wallet. Funders' limits are bumped up to 50MB RAM (Redis) storage and 50Gb transfer per month. You can double up as needed and contribute accordingly, e.g. $5 for 300MB, $50 for 3GB. Later, surplus credit in your account can be offered to buy equity at a specified volume/price.
 
 
-Build a site "redishub.com" with a foundational HTTP service for accessing and mutating keys in a hosted Redis "keyspace."
+Build a site "webserva.com" with a foundational HTTP service for accessing and mutating keys in a hosted Redis "keyspace."
 
 A keyspace is an online database accessible via Redis-style commands, and can be Redis i.e. in-memory, or disk-based e.g. via ssdb.io.
 
 User stories:
 - Use a free hosted Redis "keyspace" for low-volume ephemeral purposes (currently Redis so in-memory i.e. very fast)
-- Deploy your own private "redishub" instance using the `rquery` opensource implementation, as used by RedisHub
+- Deploy your own private "webserva" instance using the `rquery` opensource implementation, as used by RedisHub
 
 Potential uses of keyspaces:
 - serverless backend database
@@ -86,7 +86,7 @@ Future user stories:
 - Use disk-based keyspaces for archival
 - Manage auto-archival of keys
 - Enable a durable transaction log facility with playback for recovery
-- Deploy RedisHub "lambdas" to `lambdas.redishub.com` to build Redis-driven serverless backends
+- Deploy RedisHub "lambdas" to `lambdas.webserva.com` to build Redis-driven serverless backends
 - Page lambdas generate web pages from React templates, populated with data from RedisHub
 
 RedisHub lambdas are special ES2016 scripts that use keyspaces for:
@@ -106,8 +106,8 @@ See: https://github.com/evanx/rquery
 
 Notable features (June 2016):
 - Register adhoc ephemeral keyspaces
-- Identity verification via Telegram.org chat bot `@redishub_bot`
-- Access secured via client-authenticated SSL (secure.redishub.com)
+- Identity verification via Telegram.org chat bot `@WebServaBot`
+- Access secured via client-authenticated SSL (secure.webserva.com)
 - Generate tokens for Google Authenticator
 - Encrypt keys using client cert
 

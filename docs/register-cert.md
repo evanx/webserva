@@ -6,18 +6,18 @@ You can use our `bash` cert creation script using your account name, as per http
 Our bot will propose a bash script rendered with your account name, as per the authoratitive Telegram.org username.
 
 ```shell
-curl -s https://webserva.com/cert-script/ACCOUNT
+curl -s https://open.webserva.com/cert-script/ACCOUNT
 ```
 where you should substitute `ACCOUNT` for your RedisHub account name i.e. Telegram.org username.
 
 In general, we recommend reviewing any script first before executing it as follows:
 ```shell
-curl -s https://webserva.com/cert-script/ACCOUNT | bash
+curl -s https://open.webserva.com/cert-script/ACCOUNT | bash
 ```
 
 To see the commands being executed including `openssl` you can use `bash -x` as follows:
 ```shell
-curl -s https://webserva.com/cert-script/ACCOUNT | bash -x
+curl -s https://open.webserva.com/cert-script/ACCOUNT | bash -x
 ```
 
 Query paramaters include:
@@ -42,7 +42,7 @@ The content of this script is as follows when run with a placeholder `ACCOUNT` a
   # Note that the following files are created in this dir:
   # account privkey.pem cert.pem privcert.pem privcert.p12 x509.txt cert.extract.txt
   commandKey='cert-script'
-  serviceUrl='https://secure.redishub.com'
+  serviceUrl='https://secure.webserva.com'
   archive=~/.webserva/archive
   certWebhook="${serviceUrl}/create-account-telegram/${account}"
   mkdir -p ~/.webserva # ensure default dir exists
@@ -54,14 +54,14 @@ The content of this script is as follows when run with a placeholder `ACCOUNT` a
     curl -s https://raw.githubusercontent.com/webserva/webserva/master/bin/cert-script.sh -O
     cat cert-script.sh
     sha1sum cert-script.sh
-    curl -s https://webserva.com/assets/cert-script.sh.sha1sum
+    curl -s https://open.webserva.com/assets/cert-script.sh.sha1sum
     echo 'Press Ctrl-C in the next 8 seconds if the above hashes do not match'
     sleep 8
     source <(cat cert-script.sh)
   fi
 )
 ```
-where we fetch https://raw.githubusercontent.com/evanx/redishub/master/bin/cert-script.sh
+where we fetch https://raw.githubusercontent.com/evanx/webserva/master/bin/cert-script.sh
 ```
   echo "${account}" > account
   if openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
@@ -83,7 +83,7 @@ where we fetch https://raw.githubusercontent.com/evanx/redishub/master/bin/cert-
       echo "Exported $PWD/privcert.p12 OK"
       pwd; ls -l
       sleep 2
-      curl -s https://redishub.com/cert-script-help/${account}
+      curl -s https://open.webserva.com/cert-script-help/${account}
       curl -s https://raw.githubusercontent.com/webserva/webserva/master/docs/install.wscurl.txt
       certExtract=`cat cert.extract.pem`
       echo "Try https://telegram.me/WebServaBot '/grantcert $certExtract'"

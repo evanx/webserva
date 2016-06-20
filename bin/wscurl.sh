@@ -51,9 +51,9 @@ account=''
 
 help_cert() {
   wshead 'Try curl the following script to create a client cert in ~/.webserva/live:'
-  wsinfo "curl -s 'https://webserva.com/cert-script/$account?id=$USER&noarchive' | more"
+  wsinfo "curl -s 'https://open.webserva.com/cert-script/$account?id=$USER&noarchive' | more"
   wshead 'Review the script and then pipe it to bash as follows:'
-  wsinfo "curl -s 'https://webserva.com/cert-script/$account?id=$USER&noarchive' | bash"
+  wsinfo "curl -s 'https://open.webserva.com/cert-script/$account?id=$USER&noarchive' | bash"
   wsnote "Change '&noarchive' to '&archive' to force archiving of existing dir first."
 }
 
