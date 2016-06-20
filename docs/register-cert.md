@@ -19,11 +19,6 @@ Then if it looks OK, execute it as follows:
 curl -s https://open.webserva.com/cert-script/ACCOUNT | bash
 ```
 
-Incidently, to see the commands being executed including `openssl,` you can use `bash -x` as follows:
-```shell
-curl -s https://open.webserva.com/cert-script/ACCOUNT | bash -x
-```
-
 Optional query paramaters for `/cert-script` include:
 - `archive` - archive `~/.webserva/live` to `~/webserva/archive/TIMESTAMP`
 - `id` - the client cert id e.g. `admin`
@@ -114,8 +109,21 @@ It then sleeps for 8 seconds to give you a chance to press Ctrl-C to abort.
 curl -E ~/.webserva/privcert.pem https://secure.webserva.com/register-cert
 ```
 
+### How to CLI
+
+Read the following instructions to install `wscurl,` our `curl` wrapper script to use your `privcert.pem` in `~/.webserva/live.`
+
+https://raw.githubusercontent.com/webserva/webserva/master/docs/install.wscurl.txt
+
 #### Troubleshooting
 
+Check your cert details:
 ```shell
 openssl x509 -text -in ~/.webserva/live/privcert.pem | grep 'CN='
 ```
+
+To see the commands being executed including `openssl,` you can use `bash -x` as follows:
+```shell
+curl -s https://open.webserva.com/cert-script/ACCOUNT | bash -x
+```
+
