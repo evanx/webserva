@@ -1,9 +1,7 @@
 
 #### How to create a client cert
 
-You can use our `bash` cert creation script using your account name, via https://telegram.me/WebServaBot
-
-Our bot will propose a bash script rendered with your account name, as per your Telegram.org username.
+Our Telegram bot @WebServaBot will propose a bash script rendered with your account name, as per your Telegram.org username.
 
 ```shell
 curl -s https://open.webserva.com/cert-script/ACCOUNT
