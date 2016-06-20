@@ -153,3 +153,4 @@ To see the commands being executed including `openssl,` you can use `bash -x` as
 curl -s https://open.webserva.com/cert-script/ACCOUNT | bash -x
 ```
 
+https://twitter.com/@evanxsummers
