@@ -39,7 +39,7 @@ WebServa is a fast web database of structured textual data and JSON, not media a
 
 You can signup via our Telegram bot `@redishub_bot` via the command `/signup.` This will create an account as per your Telegram username. It will advise how to create an a client cert for https://secure.redishub.com/routes, and how to install our CLI `rhcurl` bash script. This is a wrapper of `curl` using your cert.
 
-![Bot signup](http://evanx.github.io/images/rquery/rhbot-signup.png)
+![Bot signup](http://evanx.github.io/images/rquery/ws040-webservabot.png)
 
 Our "50MB" service is free. This service bundle is limited to 50MB peak RAM and 20GB monthly transfer. 
 So for example, you can store 1 million records averaging 50 characters each, on us. 
