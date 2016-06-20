@@ -66,7 +66,7 @@ The content of this script is as follows when run with a placeholder `ACCOUNT` a
 )
 ```
 where we fetch https://raw.githubusercontent.com/evanx/webserva/master/bin/cert-script.sh
-```
+```shell
   echo "${account}" > account
   if openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
     -subj "/CN=${CN}/OU=${OU}/O=${O}" \
