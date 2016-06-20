@@ -27,14 +27,14 @@ Query paramaters include:
 
 The content of this script is as follows when run with a placeholder `ACCOUNT` account name:
 ```shell
-# Curl this script and pipe into bash as follows to create key dir ~/.webserva/live:
+# Curl this script and pipe it into bash for execution, as per the following line:
 # curl -s 'https://open.webserva.com/cert-script/ACCOUNT' | bash
-#
-(
-  set -u -e
-  account='ACCOUNT'
-  role='admin'
-  id='admin'
+# 
+( # create subshell for local vars and to enable set -u -e
+  set -u -e # error exit if any undeclared vars or unhandled errors
+  account='ACCOUNT' # same as Telegram.org username
+  role='admin' # role for the cert e.g. admin
+  id='admin' # user/device id for the cert
   CN='ws:ACCOUNT:admin:admin' # unique cert name (certPrefix, account, role, id)
   OU='admin' # role for this cert
   O='ACCOUNT' # account name
@@ -42,22 +42,26 @@ The content of this script is as follows when run with a placeholder `ACCOUNT` a
   # Note that the following files are created in this dir:
   # account privkey.pem cert.pem privcert.pem privcert.p12 x509.txt cert.extract.txt
   commandKey='cert-script'
-  serviceUrl='https://secure.webserva.com'
-  archive=~/.webserva/archive
-  certWebhook="${serviceUrl}/create-account-telegram/${account}"
+  serviceUrl='https://secure.webserva.com' # for cert access control
+  telegramBot='WebServaBot' # bot for granting cert access
+  archive='~/.webserva/archive' # directory to archive existing live dir when ?archive
+  certWebhook='https://secure.webserva.com/create-account-telegram/ACCOUNT'
   mkdir -p ~/.webserva # ensure default dir exists
-  if [ -d ~/.webserva/live ]
-  then
+  if [ -d ~/.webserva/live ] # directory already exists
+  then # must be archived first
     echo "Directory ~/.webserva/live already exists. Try add '?archive' query to the URL."
-  else
+  else # fetch, review and check SHA of static cert-script.sh for execution
     mkdir ~/.webserva/live && cd $_ # error exit if dir exists
     curl -s https://raw.githubusercontent.com/webserva/webserva/master/bin/cert-script.sh -O
-    cat cert-script.sh
-    sha1sum cert-script.sh
+    echo 'Please review and press Ctrl-C to abort within 8 seconds:'
+    cat cert-script.sh # review the above fetched script, we intend to execute
+    echo 'Double checking script integrity hashes:'
+    sha1sum cert-script.sh # double check its SHA against another source below
     curl -s https://open.webserva.com/assets/cert-script.sh.sha1sum
-    echo 'Press Ctrl-C in the next 8 seconds if the above hashes do not match'
-    sleep 8
-    source <(cat cert-script.sh)
+    echo 'f6edc446466e228965e51bee120425b497605949' # hardcoded SHA of stable version
+    echo 'Press Ctrl-C in the next 8 seconds to abort, and if any of the above hashes differ'
+    sleep 8 # give time to abort if SHAs not consistent, or script review incomplete
+    source <(cat cert-script.sh) # execute fetched script, hence the above review and SHA
   fi
 )
 ```
