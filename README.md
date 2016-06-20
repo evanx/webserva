@@ -9,7 +9,7 @@ The bug was that the bot was failing when your Telegram.org username was not set
 Now the bot should return a message prompting you to set your Telegram username first, then try `/signup` via the bot: 
 https://telegram.me/WebServaBot?start
 
-11 June: Note that this service is currently being rebranded from <b>RedisHub.com to WebServa.com</b>. The RedisHub.com and WebServa.com home page and `/about` are redirected to this page.
+11 June: Note that this service is currently being rebranded from RedisHub.com to WebServa.com. The RedisHub.com and WebServa.com home page and `/about` are redirected to this page.
 
 #### Overview 
 
