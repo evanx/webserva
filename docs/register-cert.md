@@ -10,22 +10,29 @@ curl -s https://open.webserva.com/cert-script/ACCOUNT
 ```
 where you should substitute `ACCOUNT` for your RedisHub account name i.e. Telegram.org username.
 
-In general, we recommend reviewing any script first before executing it as follows:
+In general, we recommend reviewing any script first <b>before</b> executing it as follows:
+```shell
+curl -s https://open.webserva.com/cert-script/ACCOUNT 
+```
+Then if it looks OK, execute it as follows:
 ```shell
 curl -s https://open.webserva.com/cert-script/ACCOUNT | bash
 ```
 
-To see the commands being executed including `openssl` you can use `bash -x` as follows:
+Incidently, to see the commands being executed including `openssl,` you can use `bash -x` as follows:
 ```shell
 curl -s https://open.webserva.com/cert-script/ACCOUNT | bash -x
 ```
 
-Query paramaters include:
+Optional query paramaters for `/cert-script` include:
+- `archive` - archive `~/.webserva/live` to `~/webserva/archive/TIMESTAMP`
 - `id` - the client cert id e.g. `admin`
 - `role` - the client cert tole e.g. `admin`
-- `archive` - archive `~/.webserva/live` to `~/webserva/archive/TIMESTAMP`
 
-The content of this script is as follows when run with a placeholder `ACCOUNT` account name:
+
+### Sample script 
+
+The content of this script should be as follows when run with a placeholder `ACCOUNT` account name:
 ```shell
 # Curl this script and pipe it into bash for execution, as per the following line:
 # curl -s 'https://open.webserva.com/cert-script/ACCOUNT' | bash
@@ -65,7 +72,8 @@ The content of this script is as follows when run with a placeholder `ACCOUNT` a
   fi
 )
 ```
-where we fetch https://raw.githubusercontent.com/evanx/webserva/master/bin/cert-script.sh
+where we fetch https://raw.githubusercontent.com/evanx/webserva/master/bin/cert-script.sh which should be:
+
 ```shell
   echo "${account}" > account
   if openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
@@ -94,6 +102,11 @@ where we fetch https://raw.githubusercontent.com/evanx/webserva/master/bin/cert-
     fi
   fi
 ```
+
+Please review these scripts, and raise any issues with us.
+
+Note that the customised script will show the fetched script's content, with comparative hashes that must match.
+It then sleeps for 8 seconds to give you a chance to press Ctrl-C to abort.
 
 ### How to register a client cert
 
