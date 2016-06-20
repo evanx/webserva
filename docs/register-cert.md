@@ -24,9 +24,9 @@ The custom script will execute the following:
 - advise how to install the `wscurl` wrapper script
 - advise you of the cert SHA to `/grantcert` via WebServaBot
 
-Having granted the cert, you will invoke the endpoint https://secure.webserva.com/register-cert using the cert. That will register the cert on the account of its O name, if granted by its SHA via WebServaBot, i.e. by the the namesake and authoratitive Telegram.org user for this WebServa account. I guess it's a Gateway Bot, i.e. one serving an API gateway, for the purposes of authentication and authorisation.
+Having granted the cert via WebServaBot, invoke the endpoint https://secure.webserva.com/register-cert using the cert. Load `~/.webserva/live/privcert.p12` into your browser, and try `curl` from your CLI terminal using your `privcert.pem.`
 
-We advise intalling our `wscurl` wrapper script as per: https://raw.githubusercontent.com/webserva/webserva/master/docs/install.wscurl.txt
+We recommend installing our `wscurl` wrapper script as per: https://raw.githubusercontent.com/webserva/webserva/master/docs/install.wscurl.txt
 
 It contains some builtin help with hints, including `/register-cert` for starters.
 
