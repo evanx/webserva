@@ -3,20 +3,13 @@
 
 Our Telegram bot @WebServaBot will propose a bash script rendered with your account name, as per your Telegram.org username.
 
-```shell
-curl -s https://open.webserva.com/cert-script/ACCOUNT
-```
-where `ACCOUNT` is a placeholder for your Telegram.org username.
-
 Click on the link given by the bot with your Telegram.org name substituted already, to review the script, and copy its URL.
 
 ![Cert script review](https://evanx.github.io/images/rquery/ws040-cert-script-curl.png)
 <hr>
 (incomplete script shown)
 
-We recommend reviewing any script first <b>before</b> executing it.
-
-<b>As per the second line of the custom script, you can curl and pipe into bash to execute the script on your local machine, and so care must be taken.</b>
+As per the second line of the custom script, you can curl and pipe into bash to execute the script on your local machine.
 
 The custom script will execute the following:
 - create the `~/.webserva/live` directory for private key material
