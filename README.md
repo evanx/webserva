@@ -2,7 +2,9 @@
 
 #### News 
 
-20 June: Rebranding complete - try https://demo.webserva.com
+20 June: Rebranding complete - try https://demo.webserva.com/create-ephemeral
+
+![Landing screenshot](http://evanx.github.io/images/rquery/ws040-ephemeral.png)
 
 17 June: Apologies for those that tried to signup before without success. 
 The bug was that the bot was failing when your Telegram.org username was not set (under Settings, via hamburger menu on Telegram). 
@@ -24,11 +26,9 @@ See http://redis.io. It is essentially a deployment of Nginx to access a Redis k
 
 You store data by key in a "keyspace," and can use lists, sets and sorted sets to keep track of things. There is more to come e.g. geographical data courtesy of Redis 3.2.
 
-Try our demo: https://demo.webserva.com/create-ephemeral. 
+Try our demo: https://demo.webserva.com/create-ephemeral
 
 This endpoint creates a new ephemeral keyspace with a TTL of 10 minutes, for demonstration purposes. This keyspace is assigned a randomized name, so that it is secret by default.
-
-![Landing screenshot](http://evanx.github.io/images/rquery/ws040-ephemeral.png)
 
 The goals of WebServa are:
 - instant virtual Redis servers
