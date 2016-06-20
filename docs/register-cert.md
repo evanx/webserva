@@ -131,6 +131,18 @@ Read the following instructions to install `wscurl,` our `curl` wrapper script t
 
 https://raw.githubusercontent.com/webserva/webserva/master/docs/install.wscurl.txt
 
+This snippet of online CLI help advises the following:
+```shell
+Try the following:
+  cd 
+  git clone https://github.com/webserva/webserva.git 
+  alias ws='~/webserva/bin/wscurl.sh' # try add this line to ~/.bashrc
+  ws help
+```
+
+![wscurl](https://evanx.github.io/images/rquery/ws040-wscurl.png)
+
+
 #### Troubleshooting
 
 Check your cert details:
