@@ -1,9 +1,9 @@
 
 set -u -e
 
-serviceLabel=${RHLABEL-WebServa}
-domain=${RHCLI-cli.webserva.com}
-cdn=${RHCLICDN-cli.webserva.com}
+serviceLabel=${WSLABEL-WebServa}
+domain=${WSCLI-cli.webserva.com}
+cdn=${WSCLICDN-cli.webserva.com}
 
 [ "$domain" != 'cli.webserva.com' ] && serviceLabel=$domain
 
@@ -63,11 +63,11 @@ then
   wsdebug "account=$account as per ~/.webserva/live/account"
 else
   wserror 'Missing file: ~/.webserva/live/account'
-  wsinfo 'This file must contain your RedisHub account name, matching a Telegram.org username.'
+  wsinfo 'This file must contain your WebServa account name, matching a Telegram.org username.'
   wswarn 'Try @WebServaBot /signup'
   if [ -t 1 ]
   then
-    wsinfo 'Enter the authoratitive Telegram name for your RedisHub account:'
+    wsinfo 'Enter the authoratitive Telegram name for your WebServa account:'
     read account
     help_cert
   fi
@@ -78,7 +78,7 @@ fi
 if [ ! -f ~/.webserva/live/privcert.pem ]
 then
   wserror 'Missing file: ~/.webserva/live/privcert.pem'
-  wserror 'This PEM file must contain your RedisHub privkey and cert'
+  wserror 'This PEM file must contain your WebServa privkey and cert'
   wswarn 'Try @WebServaBot /signup'
   help_cert
   exit 3
@@ -113,7 +113,7 @@ wshelp() {
 
 kshelp() {
   local keyspace="$1"
-  wshead "RedisHub $account $keyspace"
+  wshead "$serviceLabel $account $keyspace"
   wsinfo "Try the following commands:"
   wsinfo "ws keyspaces"
   wsinfo "ws $keyspace create-keyspace # if new"
