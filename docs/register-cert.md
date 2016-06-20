@@ -19,16 +19,16 @@ We recommend reviewing any script first <b>before</b> executing it
 As per the second line of the custom script, you can curl and pipe into bash to execute the script on your local machine, and so care must be taken.
 
 The custom script will execute the following:
-- create ~/.webserva/live 
+- create the `~/.webserva/live` directory for private key material
 - use `openssl` to create a private key, self-signed certificate, and P12 for your browser
+- advise how to install the `wscurl` wrapper script
 - advise you of the cert SHA to `/grantcert` via WebServaBot
-- finally, advise how to install the `wscurl` wrapper script
 
 Having granted the cert, you will invoke the endpoint https://secure.webserva.com/register-cert using the cert. That will register the cert on the account purported by its O name, and granted by its SHA via WebServaBot, i.e. by the the namesake and authoratitive Telegram.org user for this WebServa account. I guess it's a Gateway Bot, i.e. one serving an API gateway, for the purposes of authentication and authorisation.
 
 We advise intalling our `wscurl` wrapper script as per: https://raw.githubusercontent.com/webserva/webserva/master/docs/install.wscurl.txt
 
-It contains some builtin help with hints.
+It contains some builtin help with hints, including `/register-cert` for starters.
 
 Optional query paramaters for `/cert-script` include:
 - `archive` - archive `~/.webserva/live` to `~/webserva/archive/TIMESTAMP`
