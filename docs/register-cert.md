@@ -10,18 +10,25 @@ curl -s https://open.webserva.com/cert-script/ACCOUNT
 ```
 where `ACCOUNT` is a placeholder for your Telegram.org username.
 
-where we recommend reviewing any script first <b>before</b> executing it as follows:
-```shell
-curl -s https://open.webserva.com/cert-script/ACCOUNT | bash
-```
+Click on the link given by the bot with your Telegram.org name substituted already, to review the script, and copy its URL.
+
+![Cert script review](https://evanx.github.io/images/rquery/ws040-cert-script-review.png)
+
+We recommend reviewing any script first <b>before</b> executing it
+
+As per the second line of the custom script, you can curl and pipe into bash to execute the script on your local machine, and so care must be taken.
+
+The custom script will execute the following:
+- create ~/.webserva/live 
+- use `openssl` to create a private key, self-signed certificate, and P12 for your browser
+- advise how to install the `wscurl` wrapper script
 
 Optional query paramaters for `/cert-script` include:
 - `archive` - archive `~/.webserva/live` to `~/webserva/archive/TIMESTAMP`
 - `id` - the client cert id e.g. `admin`
 - `role` - the client cert tole e.g. `admin`
 
-
-### Sample script 
+### Scripts
 
 The content of this script should be as follows when run with a placeholder `ACCOUNT` account name:
 ```shell
@@ -102,8 +109,11 @@ It then sleeps for 8 seconds to give you a chance to press Ctrl-C to abort.
 ### How to register a client cert
 
 ```shell
-curl -E ~/.webserva/privcert.pem https://secure.webserva.com/register-cert
+curl -E ~/.webserva/live/privcert.pem https://secure.webserva.com/register-cert
 ```
+
+Actually, we recommend that you install `wscurl,` our `curl` wrapper script to use that `~/.webserva/live/privcert.pem` by default.
+It also offers some builtin help with hints.
 
 ### How to CLI
 
