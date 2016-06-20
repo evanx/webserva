@@ -17,7 +17,7 @@ Click on the link given by the bot with your Telegram.org name substituted alrea
 
 We recommend reviewing any script first <b>before</b> executing it.
 
-As per the second line of the custom script, you can curl and pipe into bash to execute the script on your local machine, and so care must be taken.
+<b>As per the second line of the custom script, you can curl and pipe into bash to execute the script on your local machine, and so care must be taken.</b>
 
 The custom script will execute the following:
 - create the `~/.webserva/live` directory for private key material
