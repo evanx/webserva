@@ -12,6 +12,7 @@ Click on the link given by the bot with your Telegram.org name substituted alrea
 
 ![Cert script review](https://evanx.github.io/images/rquery/ws040-cert-script-curl.png)
 <hr>
+(incomplete script shown)
 
 We recommend reviewing any script first <b>before</b> executing it.
 
