@@ -250,4 +250,4 @@ wscurl() {
   fi
 }
 
-wscurl $@
+wscurl "$@"
