@@ -81,7 +81,7 @@ where we fetch https://raw.githubusercontent.com/webserva/webserva/master/bin/ce
   then
     openssl x509 -text -in cert.pem > x509.txt
     grep 'CN=' x509.txt
-    cat cert.pem | head -3 | tail -1 | tail -c-12 > cert.extract.pem
+    echo -n `cat cert.pem | head -n-1 | tail -n+2` | sed -e 's/\s//g' | sha1sum | cut -f1 -d' ' > cert.pem.sha1sum
     cat privkey.pem cert.pem > privcert.pem
     openssl x509 -text -in privcert.pem | grep 'CN='
     curl -s -E privcert.pem "$certWebhook" ||
@@ -96,10 +96,15 @@ where we fetch https://raw.githubusercontent.com/webserva/webserva/master/bin/ce
       sleep 2
       curl -s https://open.webserva.com/cert-script-help/${account}
       curl -s https://raw.githubusercontent.com/webserva/webserva/master/docs/install.wscurl.txt
-      certExtract=`cat cert.extract.pem`
-      echo "Try https://telegram.me/WebServaBot '/grantcert $certExtract'"
+      certSha=`cat cert.pem.sha1sum`
+      echo "Try '/grantcert $certSha' via https://telegram.me/WebServaBot?start"
     fi
   fi
+```
+where we the custom script will check its SHA:
+```shell
+$ curl -s https://raw.githubusercontent.com/webserva/webserva/master/bin/cert-script.sh | sha1sum
+184063fdc03f1b2ee3781d24dd8ace859bd86f89  -
 ```
 
 Please review these scripts, and raise any issues with us.
