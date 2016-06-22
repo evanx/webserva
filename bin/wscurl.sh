@@ -11,9 +11,15 @@ shellName=$0
 shellCommand1=${1-}
 shellArgs="${*}"
 
+if [ ! -x ~/webserva/bin/wslogging.sh ]
+then
+  >&2 echo "Missing: ~/webserva/bin/wslogging.sh. Try: git clone https://github.com/webserva/webserva.git"
+  exit 3
+fi
+
 . ~/webserva/bin/wslogging.sh
 
-tmp=~/.ttl/webserva/days/1
+tmp=~/.webserva/ttl/days/1
 if [ ! -d $tmp ]
 then
   wsalert "Creating tmp directory: mkdir -p $tmp"
@@ -36,11 +42,11 @@ trap_error() {
 }
 
 trap_sigint() {
-  find ~/.bashbin/ttl/days/1 -type f -mtime +1 -delete
+  find ~/.webserva/ttl/days/1 -type f -mtime +1 -delete
 }
 
 trap_sigterm() {
-  find ~/.bashbin/ttl/days/1 -type f -mtime +1 -delete
+  find ~/.webserva/ttl/days/1 -type f -mtime +1 -delete
 }
 
 trap trap_sigint SIGINT

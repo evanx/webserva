@@ -71,7 +71,7 @@ The content of this script should be as follows when run with a placeholder `ACC
   fi
 )
 ```
-where we fetch https://raw.githubusercontent.com/evanx/webserva/master/bin/cert-script.sh which should be:
+where we fetch https://raw.githubusercontent.com/webserva/webserva/master/bin/cert-script.sh which should be:
 
 ```shell
   echo "${account}" > account
