@@ -62,8 +62,8 @@ The content of this script should be as follows when run with a placeholder `ACC
     echo 'Please review and press Ctrl-C to abort within 8 seconds:'
     cat cert-script.sh # review the above fetched script, we intend to execute
     echo 'Double checking script integrity hashes:'
-    sha1sum cert-script.sh # double check its SHA against another source below
-    curl -s https://open.webserva.com/assets/cert-script.sh.sha1sum
+    shasum cert-script.sh # double check its SHA against another source below
+    curl -s https://open.webserva.com/assets/cert-script.sh.shasum
     echo 'f6edc446466e228965e51bee120425b497605949' # hardcoded SHA of stable version
     echo 'Press Ctrl-C in the next 8 seconds to abort, and if any of the above hashes differ'
     sleep 8 # give time to abort if SHAs not consistent, or script review incomplete
@@ -81,7 +81,7 @@ where we fetch https://raw.githubusercontent.com/webserva/webserva/master/bin/ce
   then
     openssl x509 -text -in cert.pem > x509.txt
     grep 'CN=' x509.txt
-    echo -n `cat cert.pem | head -n-1 | tail -n+2` | sed -e 's/\s//g' | sha1sum | cut -f1 -d' ' > cert.pem.sha1sum
+    echo -n `cat cert.pem | head -n-1 | tail -n+2` | sed -e 's/\s//g' | shasum | cut -f1 -d' ' > cert.pem.shasum
     cat privkey.pem cert.pem > privcert.pem
     openssl x509 -text -in privcert.pem | grep 'CN='
     curl -s -E privcert.pem "$certWebhook" ||
@@ -96,14 +96,14 @@ where we fetch https://raw.githubusercontent.com/webserva/webserva/master/bin/ce
       sleep 2
       curl -s https://open.webserva.com/cert-script-help/${account}
       curl -s https://raw.githubusercontent.com/webserva/webserva/master/docs/install.wscurl.txt
-      certSha=`cat cert.pem.sha1sum`
+      certSha=`cat cert.pem.shasum`
       echo "Try '/grantcert $certSha' via https://telegram.me/WebServaBot?start"
     fi
   fi
 ```
 where we the custom script will check its SHA:
 ```shell
-$ curl -s https://raw.githubusercontent.com/webserva/webserva/master/bin/cert-script.sh | sha1sum
+$ curl -s https://raw.githubusercontent.com/webserva/webserva/master/bin/cert-script.sh | shasum
 184063fdc03f1b2ee3781d24dd8ace859bd86f89  -
 ```
 
