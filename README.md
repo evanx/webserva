@@ -57,8 +57,9 @@ So sign up and imagine some cool use cases for storing data in memory in the clo
 
 We provide a script you can curl into bash to create a client cert easily, e.g. please review:
 
-- https://open.webserva.com/cert-script/ME (with your Telegram.org username in place of "ME")
-- https://raw.githubusercontent.com/webserva/webserva/master/bin/cert-script.sh
+- https://open.webserva.com/cert-script/ME (customise with your Telegram.org username in place of "ME")
+- https://raw.githubusercontent.com/webserva/webserva/master/bin/cert-script.sh (openssl)
+- https://open.webserva.com/cert-script-help/ME (some customised help that the script curls)
 
 Incidently, we will introduce a standard keyspace role `submitter` which can append to a list, set a new field, 
 and perform some other aggregating commands. 
