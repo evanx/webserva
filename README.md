@@ -60,6 +60,7 @@ We provide a script you can curl into bash to create a client cert easily, e.g. 
 - https://open.webserva.com/cert-script/ME - customise with your Telegram.org username in place of "ME"
 - https://open.webserva.com/cert-script-help/ME - some customised help that the above script curls
 - https://raw.githubusercontent.com/webserva/webserva/master/bin/cert-script.sh - openssl cert generation
+- https://raw.githubusercontent.com/webserva/webserva/master/docs/install.wscurl.txt - CLI installation instructions
 
 Incidently, we will introduce a standard keyspace role `submitter` which can append to a list, set a new field, 
 and perform some other aggregating commands. 
