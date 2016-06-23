@@ -55,7 +55,10 @@ So sign up and imagine some cool use cases for storing data in memory in the clo
 - private access is via client certs you have authorised via @WebServaBot, our "Gateway bot"
 - you can publish specific keyspaces for read-only web access via CDN
 
-We provide a script you can curl into bash to create a client cert easily e.g. see https://open.webserva.com/cert-script/ME
+We provide a script you can curl into bash to create a client cert easily, e.g. please review:
+
+- https://open.webserva.com/cert-script/ME (with your Telegram.org username in place of "ME")
+- https://raw.githubusercontent.com/webserva/webserva/master/bin/cert-script.sh
 
 Incidently, we will introduce a standard keyspace role `submitter` which can append to a list, set a new field, 
 and perform some other aggregating commands. 
