@@ -55,10 +55,13 @@ So sign up and imagine some cool use cases for storing data in memory in the clo
 - private access is via client certs you have authorised via @WebServaBot, our "Gateway bot"
 - you can publish specific keyspaces for read-only web access via CDN
 
-We provide a script you can curl into bash to create a client cert easily, e.g. please review:
+We provide a script you can curl into bash to create a client cert easily:
 
 - https://open.webserva.com/cert-script/ME - customise with your Telegram.org username in place of "ME"
-- https://open.webserva.com/cert-script-help/ME - some customised help that the above script curls
+
+Note that it will curl other scripts as follows:
+
+- https://open.webserva.com/cert-script-help/ME - some customised help 
 - https://raw.githubusercontent.com/webserva/webserva/master/bin/cert-script.sh - openssl cert generation
 - https://raw.githubusercontent.com/webserva/webserva/master/docs/install.wscurl.txt - CLI installation instructions
 
@@ -75,8 +78,8 @@ Note that client certs are:
 - client certs are authorised by account admins via our Telegram.org bot
 - Our bot will advise the URL of a custom bash script to create client certs using `openssl`
 
-Incidently, we will introduce a mechanism for auto-enrolling client certs. 
-A special keyspace might be used set enrollment tokens for a certain role and client ID on your account. 
+Incidently, we will introduce a mechanism for auto-enrolling client certs, e.g. for IoT devices.
+A special keyspace might be used set enrollment tokens for a certain role e.g. `device` and client ID on your account. 
 Certs professing your account (via their O name), matching the designated role (OU) for that client ID (CN), 
 and bearing the matching enrollment token, can auto-enroll their self-signed cert.
 
