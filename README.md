@@ -39,7 +39,7 @@ WebServa is a fast web database of structured textual data and JSON, not media a
 
 #### Accounts
 
-You can signup via our Telegram bot `@redishub_bot` via the command `/signup.` This will create an account as per your Telegram username. It will advise how to create an a client cert for https://secure.redishub.com/routes, and how to install our CLI `rhcurl` bash script. This is a wrapper of `curl` using your cert.
+You can signup via our Telegram bot `@WebServaBot` via the command `/signup.` This will create an account as per your Telegram username. It will advise how to create an a client cert for https://secure.redishub.com/routes, and how to install our CLI `rhcurl` bash script. This is a wrapper of `curl` using your cert.
 
 ![Bot signup](http://evanx.github.io/images/rquery/ws040-webservabot.png)
 <hr>
@@ -52,8 +52,10 @@ This is determined from Digital Ocean infrastructure costs, as a market indicato
 So sign up and imagine some cool use cases for storing data in memory in the cloud, publishable in volume via CDN, or kept private:
 - ephemeral keyspaces have a randomly-generated name to be secret by default, but sharable
 - keyspaces you create on account are private by default
-- private access is via client certs you have authorised on your account
+- private access is via client certs you have authorised via @WebServaBot, our "Gateway bot"
 - you can publish specific keyspaces for read-only web access via CDN
+
+We provide a script you can curl into bash to create a client cert easily e.g. see https://open.webserva.com/cert-script/ME
 
 Incidently, we will introduce a standard keyspace role `submitter` which can append to a list, set a new field, 
 and perform some other aggregating commands. 
@@ -167,7 +169,7 @@ Certainly Redis is the leading caching server. But actually Redis is an in-memor
 
 #### How do I generate an WebServa admin cert?
 
-You can use `@redishub_bot /signup` which will propose a bash script to generate a `privcert.pem` (e.g. for curl CLI) and `privcert.p12` to import into your browser.
+You can use `@WebServaBot /signup` which will propose a bash script to generate a `privcert.pem` (e.g. for curl CLI) and `privcert.p12` to import into your browser.
 
 #### How do I force my browser to send my cert
 
@@ -223,7 +225,7 @@ Currently all HTTP requests are redirected, and also some HTTPS ones, namely the
 I wished to focus on client cert auth first, so no webpage for login/signup yet.
 
 Having said that, you can:
-- signup via Telegram.org chat to `@redishub_bot`
+- signup via Telegram.org chat to `@WebServaBot`
 - login your web browser using your self-signed client cert
 
 #### Why do my client certs have CN and OU names only?
@@ -329,7 +331,7 @@ Later we will support `POST` for `set, hset` et al, and thereby enable larger do
 
 #### How to create an account
 
-Chat `/signup` to `@redishub_bot` on https://web.telegram.org. That will propose an `openssl` script for `bash.`
+Chat `/signup` to `@WebServaBot` on https://web.telegram.org. That will propose an `openssl` script for `bash.`
 
 I haven't yet built a typical SaaS web site (yet) with signup, signin with Google, etc.
 
@@ -490,7 +492,7 @@ See: https://github.com/evanx/rquery
 
 Notable features (June 2016):
 - Create adhoc ephemeral keyspaces
-- Identity verification via Telegram.org chat bot `@redishub_bot`
+- Identity verification via Telegram.org chat bot `@WebServaBot`
 - Access secured via client-authenticated SSL (secure.redishub.com)
 - Generate tokens for Google Authenticator
 - Encrypt keys using client cert

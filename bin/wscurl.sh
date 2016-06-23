@@ -208,6 +208,10 @@ wscurl() {
   then
     curlpriv https://$domain/register-cert
     return $?
+  elif [ "$arg1" = 'cert-script' ]
+  then
+    curlpriv https://$domain/cert-script/$account
+    return $?
   elif [ "$arg1" = 'create-account' -o "$arg1" = 'create-account-telegram' ]
   then
     curlpriv https://$domain/create-account-telegram/$account
