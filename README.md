@@ -16,8 +16,7 @@ Now the bot should return a message prompting this before `/signup`
 
 WebServa is a provider of serverless "keyspaces" we might be described as "web databases." It is cloud resource intended for web apps, mobile and IoT devices. 
 Technically speaking, it offers a client-authenticated HTTPS API with a subset of Redis commands for accessing virtual Redis servers.
-See http://redis.io. It is essentially a deployment of Nginx to access a Redis keyspace with multi-tenancy and access control via our opensource Node server: 
-- Our server is an integration layer between Nginx and Redis for multi-tenancy and access control
+See http://redis.io. It is essentially an deployment of Nginx and Redis integrated via our Node server for multi-tenancy and access control: 
 - Private access is via HTTPS using self-signed client certs e.g. generated with `openssl`
 - Built-in Telegram.org bot for two-factor identity authentication of account admins
 - Use the bot to control access to your keyspaces e.g. generate/grant/revoke certs
@@ -74,7 +73,7 @@ This is potentially useful for registries, message hubs and metrics aggregators.
 
 Note that client certs are:
 - self-signed e.g. created using `openssl` with your account name as the Organisation (O name)
-- the Organisational Unit (OU name) is the role of the cert e.g. `admin` or `submitter`
+- the Organisational Unit (OU name) is the role of the cert e.g. admin, submitter, device
 - client certs are authorised by account admins via our Telegram.org bot
 - Our bot will advise the URL of a custom bash script to create client certs using `openssl`
 
@@ -140,7 +139,9 @@ Private keyspaces can be created. They are secured using self-signed client cert
 
 #### How do I navigate the site?
 
-Links are shown in color. Otherwise click anywhere on the iconized header to go "back" a level e.g. to your keyspace home, `/routes` and finally here.
+Click anywhere on the iconized header to go "back" a level e.g. to your keyspace home, `/routes` and finally here.
+
+Otherwise links are shown in color.
 
 For example, in the following screenshot, you would click anywhere on top row containing:
 - the database icon
