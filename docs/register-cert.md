@@ -27,7 +27,7 @@ Optional query paramaters for `/cert-script` include:
 - `id` - the client cert id e.g. `admin`
 - `role` - the client cert tole e.g. `admin` or `submitter`
 
-However these are still experimental in this half-baked MVP, and we cannot advise their correct and safe use yet, so use at your own risk.
+However these are still experimental in this MVP, and we cannot advise their correct and safe use yet.
 
 ### Scripts
 
@@ -101,7 +101,7 @@ where we fetch https://raw.githubusercontent.com/webserva/webserva/master/bin/ce
     fi
   fi
 ```
-where we the custom script will check its SHA:
+where the custom script will check its SHA:
 ```shell
 $ curl -s https://raw.githubusercontent.com/webserva/webserva/master/bin/cert-script.sh | shasum
 184063fdc03f1b2ee3781d24dd8ace859bd86f89  -
