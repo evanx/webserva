@@ -103,8 +103,10 @@ where we fetch https://raw.githubusercontent.com/webserva/webserva/master/bin/ce
 ```
 where the custom script will check its SHA:
 ```shell
-$ curl -s https://raw.githubusercontent.com/webserva/webserva/master/bin/cert-script.sh | shasum
-184063fdc03f1b2ee3781d24dd8ace859bd86f89  -
+curl -s https://raw.githubusercontent.com/webserva/webserva/master/bin/cert-script.sh | shasum
+```
+```shell
+3fe7b004596b99951354f1bb0853d0629afff216
 ```
 
 Please review these scripts, and raise any issues with us.
