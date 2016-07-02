@@ -5,7 +5,7 @@
   then
     openssl x509 -text -in cert.pem > x509.txt
     grep 'CN=' x509.txt
-    echo -n `cat cert.pem | head -n-1 | tail -n+2` | sed -e 's/\s//g' | shasum | cut -f1 -d' ' > cert.pem.shasum
+    echo -n `cat cert.pem | tail -n+2 | sed '$ d'` | sed -e 's/\s//g' | shasum | cut -f1 -d' ' > cert.pem.shasum
     cat privkey.pem cert.pem > privcert.pem
     openssl x509 -text -in privcert.pem | grep 'CN='
     curl -s -E privcert.pem "$certWebhook" ||
