@@ -8,14 +8,20 @@
     echo -n `cat cert.pem | tail -n+2 | sed '$ d'` | sed -e 's/\s//g' | shasum | cut -f1 -d' ' > cert.pem.shasum
     cat privkey.pem cert.pem > privcert.pem
     openssl x509 -text -in privcert.pem | grep 'CN='
-    curl -s -E privcert.pem "$certWebhook" ||
+    if [ $? -ne 0 ]
       echo "Registered account ${account} ERROR $?"
-    if ! openssl pkcs12 -export -out privcert.p12 -inkey privkey.pem -in cert.pem
+    if ! openssl pkcs12 -export -nodes -out privcert.p12 -inkey privkey.pem -in cert.pem 
     then
       echo "ERROR $?: openssl pkcs12 ($PWD)"
       false # error code 1
     else
       echo "Exported $PWD/privcert.p12 OK"
+      if uname | grep Linux
+      then
+        curl -s -E privcert.pem "$certWebhook" 
+      else 
+        curl -s -E privcert.p12 "$certWebhook" 
+      fi
       pwd; ls -l
       sleep 2
       curl -s https://open.webserva.com/cert-script-help/${account}
