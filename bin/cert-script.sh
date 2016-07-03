@@ -8,8 +8,6 @@
     echo -n `cat cert.pem | tail -n+2 | sed '$ d'` | sed -e 's/\s//g' | shasum | cut -f1 -d' ' > cert.pem.shasum
     cat privkey.pem cert.pem > privcert.pem
     openssl x509 -text -in privcert.pem | grep 'CN='
-    if [ $? -ne 0 ]
-      echo "Registered account ${account} ERROR $?"
     if ! openssl pkcs12 -export -nodes -out privcert.p12 -inkey privkey.pem -in cert.pem 
     then
       echo "ERROR $?: openssl pkcs12 ($PWD)"
@@ -18,9 +16,15 @@
       echo "Exported $PWD/privcert.p12 OK"
       if uname | grep Linux
       then
+        echo "Trying: curl -E privcert.pem $certWebhook"
         curl -s -E privcert.pem "$certWebhook" 
       else 
+        echo "Trying: curl -E privcert.p12 $certWebhook"
         curl -s -E privcert.p12 "$certWebhook" 
+      fi
+      if [ $? -ne 0 ]
+      then
+        echo "ERROR $? curl $certWebhook"
       fi
       pwd; ls -l
       sleep 2
