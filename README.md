@@ -1,18 +1,14 @@
 ### WebServa.com
 
+The RedisHub.com and WebServa.com home page and `/about` are redirected to this page.
+
 #### News
 
-29 October: Preparing our first 32GB server, via http://www.scaleway.com.
+29 October: Preparing our first 32GB server.
 
-20 June: Rebranding complete - try https://demo.webserva.com/create-ephemeral
+20 June: Rebranding complete.
 
-![Landing screenshot](http://evanx.github.io/images/rquery/ws040-ephemeral.png)
-
-17 June: Apologies for those that tried to signup before without success.
-The bug was that the bot was failing when your Telegram.org username was not set (under Settings, via hamburger menu on Telegram).
-Now the bot should return a message prompting this before `/signup`
-
-11 June: Note that this service is currently being rebranded from RedisHub.com to WebServa.com. The RedisHub.com and WebServa.com home page and `/about` are redirected to this page.
+11 June: Note that this service is currently being rebranded from RedisHub.com to WebServa.com.
 
 #### Overview
 
