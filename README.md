@@ -2,7 +2,7 @@
 
 #### News
 
-29 October: Preparing a http://www.scaleway.com 32GB server for Webserva.com.
+29 October: Preparing our first 32GB server, via http://www.scaleway.com.
 
 20 June: Rebranding complete - try https://demo.webserva.com/create-ephemeral
 
