@@ -2,6 +2,8 @@
 
 The RedisHub.com and WebServa.com home page and `/about` are redirected to this page.
 
+Try our demo, creating a ephemeral Redis keyspace: https://demo.webserva.com/create-ephemeral
+
 ![Landing screenshot](http://evanx.github.io/images/rquery/ws040-ephemeral.png)
 
 #### News
