@@ -1,22 +1,24 @@
 ### WebServa.com
 
-#### News 
+#### News
+
+29 October: Ordered http://www.scaleway.com 32GB server.
 
 20 June: Rebranding complete - try https://demo.webserva.com/create-ephemeral
 
 ![Landing screenshot](http://evanx.github.io/images/rquery/ws040-ephemeral.png)
 
-17 June: Apologies for those that tried to signup before without success. 
-The bug was that the bot was failing when your Telegram.org username was not set (under Settings, via hamburger menu on Telegram). 
-Now the bot should return a message prompting this before `/signup` 
+17 June: Apologies for those that tried to signup before without success.
+The bug was that the bot was failing when your Telegram.org username was not set (under Settings, via hamburger menu on Telegram).
+Now the bot should return a message prompting this before `/signup`
 
 11 June: Note that this service is currently being rebranded from RedisHub.com to WebServa.com. The RedisHub.com and WebServa.com home page and `/about` are redirected to this page.
 
-#### Overview 
+#### Overview
 
-WebServa is a provider of serverless "keyspaces" we might be described as "web databases." It is cloud resource intended for web apps, mobile and IoT devices. 
+WebServa is a provider of serverless "keyspaces" we might be described as "web databases." It is cloud resource intended for web apps, mobile and IoT devices.
 Technically speaking, it offers a client-authenticated HTTPS API with a subset of Redis commands for accessing virtual Redis servers.
-See http://redis.io. It is essentially an deployment of Nginx and Redis integrated via our Node server for multi-tenancy and access control: 
+See http://redis.io. It is essentially an deployment of Nginx and Redis integrated via our Node server for multi-tenancy and access control:
 - Private access is via HTTPS using self-signed client certs e.g. generated with `openssl`
 - Built-in Telegram.org bot for two-factor identity authentication of account admins
 - Use the bot to control access to your keyspaces e.g. generate/grant/revoke certs
@@ -38,13 +40,13 @@ WebServa is a fast web database of structured textual data and JSON, not media a
 
 #### Accounts
 
-You can signup via our Telegram bot `@WebServaBot` via the command `/signup.` This will create an account as per your Telegram username. It will advise how to create an a client cert for https://secure.redishub.com/routes, and how to install our CLI `rhcurl` bash script. This is a wrapper of `curl` using your cert.
+You can signup via our Telegram bot `@WebServaBot` via the command `/signup.` This will create an account as per your Telegram username. It will advise how to create an a client cert for https://secure.webserva.com/routes, and how to install our CLI `rhcurl` bash script. This is a wrapper of `curl` using your cert.
 
 ![Bot signup](http://evanx.github.io/images/rquery/ws040-webservabot.png)
 <hr>
 
-Our "50MB" service is free. This service bundle is limited to 50MB peak RAM and 20GB monthly transfer. 
-So for example, you can store 1 million records averaging 50 characters each, on us. 
+Our "50MB" service is free. This service bundle is limited to 50MB peak RAM and 20GB monthly transfer.
+So for example, you can store 1 million records averaging 50 characters each, on us.
 Your account can be topped up via virtual currency where "50MB" bundles are priced at roughly 50c USD per month.
 This is determined from Digital Ocean infrastructure costs, as a market indicator.
 
@@ -60,13 +62,13 @@ We provide a script you can curl into bash to create a client cert easily:
 
 Note that it will curl other scripts as follows:
 
-- https://open.webserva.com/cert-script-help/ME - some customised help 
+- https://open.webserva.com/cert-script-help/ME - some customised help
 - https://raw.githubusercontent.com/webserva/webserva/master/bin/cert-script.sh - openssl cert generation
 - https://raw.githubusercontent.com/webserva/webserva/master/docs/install.wscurl.txt - CLI installation instructions
 
-Incidently, we will introduce a standard keyspace role `submitter` which can append to a list, set a new field, 
-and perform some other aggregating commands. 
-However it cannot access data created by other submitters. 
+Incidently, we will introduce a standard keyspace role `submitter` which can append to a list, set a new field,
+and perform some other aggregating commands.
+However it cannot access data created by other submitters.
 This is potentially useful for registries, message hubs and metrics aggregators.
 
 ![Curl command line wrapper](http://evanx.github.io/images/rquery/ws040-wscurl.png)
@@ -78,8 +80,8 @@ Note that client certs are:
 - Our bot will advise the URL of a custom bash script to create client certs using `openssl`
 
 Incidently, we will introduce a mechanism for auto-enrolling client certs, e.g. for IoT devices.
-A special keyspace might be used set enrollment tokens for a certain role e.g. `device` and client ID on your account. 
-Certs professing your account (via their O name), matching the designated role (OU) for that client ID (CN), 
+A special keyspace might be used set enrollment tokens for a certain role e.g. `device` and client ID on your account.
+Certs professing your account (via their O name), matching the designated role (OU) for that client ID (CN),
 and bearing the matching enrollment token, can auto-enroll their self-signed cert.
 
 Documentation: https://github.com/evanx/rquery
@@ -114,7 +116,7 @@ It's MVP for small ephemeral keyspaces, where keys idle out after 10 days. We ar
 Archiving has not been implemented, and `PERSIST` is not available.
 Hence we only support ephemeral keyspaces.
 
-We have not implemented `SCAN` yet. `KEYS` must be used, and this returns all keys in the keyspace. 
+We have not implemented `SCAN` yet. `KEYS` must be used, and this returns all keys in the keyspace.
 Hence we only support small keyspaces.
 
 
@@ -154,13 +156,13 @@ Incidently, "hub" is the specially named "open" account name, i.e. accessed with
 
 #### How do I try Redis commands?
 
-Try: https://demo.redishub.com/create-ephemeral
+Try: https://demo.webserva.com/create-ephemeral
 
 This will create a new ephemeral keyspace for you. The keyspace home page lists some sample commands you can try. These links are rendered in color.
 
 Incidently, this will create a ephemeral keyspace on the "demo" database. TTLs are 10 minutes only, but this is fine for the playground.
 
-Note that currently we don't have a command completion tool, but you can edit the URL itself in the browser location bar. Also try to change the domain to `replica.redishub.com` to check the replication.
+Note that currently we don't have a command completion tool, but you can edit the URL itself in the browser location bar. Also try to change the domain to `replica.webserva.com` to check the replication.
 
 #### Why use a Redis database rather than SQL?
 
@@ -259,12 +261,12 @@ Atomicity, consistency, isolation and durability guarantees are those offered by
 
 We wish to support maximally durable transactions since this is an important use case e.g. to record financial transactions using PostgreSQL. However, I wish firstly to address web content, messaging and analytics use cases, optionally trading off performance for database size using ssdb.io, or performance for durability using PostgreSQL.
 
-Incidently, as an former PostgreSQL DBA for a financial SaaS application, I'm not convinced that absolute durability is as important as performance. 
+Incidently, as an former PostgreSQL DBA for a financial SaaS application, I'm not convinced that absolute durability is as important as performance.
 Often application load necessitates tweaking RAID settings to boost performance at the cost of durability.
-One is always vulnerable to minor "disasters," the most common of which are application and configuration errors, rather than server crashes. 
+One is always vulnerable to minor "disasters," the most common of which are application and configuration errors, rather than server crashes.
 Recovery procedures are always necessary, not least to handle network errors.
 
-In my experience, SQL does not enable fast websites, and most companies use a secondary Redis cache to mitigate this. 
+In my experience, SQL does not enable fast websites, and most companies use a secondary Redis cache to mitigate this.
 An argument can be made that Redis be the primary data store for your site, and disk-based solutions are used for secondary persistence, e.g. for the "archival" of historical and transactional data, to ensure durability where this is specifically required.
 
 WebServa intends to build a simple and fast web database via HTTPS, where the durability status of your transaction can be confirmed via URL query:
@@ -272,13 +274,13 @@ WebServa intends to build a simple and fast web database via HTTPS, where the du
 - a query to `replica.webserva.com` can confirm that it has been replicated to another machine
 - a query to `archive.webserva.com` can confirm that it has been permanently archived to disk
 
-This mechanism provides a durability guarantee. 
-Importantly, it also provides a mechanism for retries, i.e. when a database update times out on the client side. 
-If the server did receive the request, but the reply was not received by the client, then clearly it should avoid executing the update again. 
-This is especially true if the command pushes to value a list, that should not be duplicated. 
+This mechanism provides a durability guarantee.
+Importantly, it also provides a mechanism for retries, i.e. when a database update times out on the client side.
+If the server did receive the request, but the reply was not received by the client, then clearly it should avoid executing the update again.
+This is especially true if the command pushes to value a list, that should not be duplicated.
 
-Typically a client app might reverse a transaction when not confirmed. For example, consider a shopping cart app. 
-A waiting customer orders a product through an ecommerce app or point-of-sale terminal. 
+Typically a client app might reverse a transaction when not confirmed. For example, consider a shopping cart app.
+A waiting customer orders a product through an ecommerce app or point-of-sale terminal.
 However network errors at the time cause the transaction sent to WebServa to time out, and the retry also times out.
 Since the app cannot confirm that the transaction is recorded, it chooses to cancel transaction and advises the customer to try the purchase again later.
 
@@ -311,20 +313,20 @@ Incidently, as soon as warranted, we intend to deploy 64GB servers that can acco
 
 #### Why would a developer use an indie service which might become abandonware?
 
-That is a very good question. I guess it would have to be compelling for a specific niche, e.g. Telegram bots. 
+That is a very good question. I guess it would have to be compelling for a specific niche, e.g. Telegram bots.
 
 Incidently, as it happens we intend to build a basic bot platform on WebServa in the coming months, i.e. a bot to deploy serverless bots which use WebServa keyspaces for config, state, monitoring, storage, etc.
 
 We guarantee that you will be able do data dumps, activate HTTP redirects etc, to facilitate data migration at any time to yourselves or other providers. WebServa aims to align with the canonical API for a large set of Redis commands. We clearly indicate some custom commands, which you should avoid if possible.
 
-We also guarantee is that WebServa only requires opensource software, 
+We also guarantee is that WebServa only requires opensource software,
 including our Node server that anyone can run themselves.
 Our server is essentially just an HTTP interface to Redis, with access control and accounting functions for multi-tenancy.
 We will provide a dedicated-account profile for the app soon e.g. where unnecessary accounting functions are disabled.
 
-Then the same WebServa `npm` installation that you might run for offline development, 
-you can deploy for production on your own infrastructure. 
-All that changes on the client side is that the domain must be changed e.g. from `WebServa.com` to your domain. In the meantime, we'll HTTP redirect client requests for you. 
+Then the same WebServa `npm` installation that you might run for offline development,
+you can deploy for production on your own infrastructure.
+All that changes on the client side is that the domain must be changed e.g. from `WebServa.com` to your domain. In the meantime, we'll HTTP redirect client requests for you.
 
 
 #### What about higher volume usage?
@@ -410,12 +412,12 @@ The `demo` domain has its own database, but otherwise all subdomains access the 
  - `cdn` - read-only cached replica (warm data)
  - `archive` - read-only disk-based archive to recover cold data
 
-#### What are "perspectives" of keyspaces? 
+#### What are "perspectives" of keyspaces?
 
 A "perspective" is a specific transformation of a keyspace into a web view. Currently we support:
 - HTML - browser admin console with hints etc
 - JSON - the Redis result is sent as a JSON HTTP response (string, array or object)
-- CLI script (curl wrapper) 
+- CLI script (curl wrapper)
 
 The desired perspective is indicated by the domain e.g. `json.webserva.com` and other means e.g. query string:
 - `?html` - default HTML view
@@ -502,7 +504,7 @@ See: https://github.com/evanx/rquery
 Notable features (June 2016):
 - Create adhoc ephemeral keyspaces
 - Identity verification via Telegram.org chat bot `@WebServaBot`
-- Access secured via client-authenticated SSL (secure.redishub.com)
+- Access secured via client-authenticated SSL (secure.webserva.com)
 - Generate tokens for Google Authenticator
 - Encrypt keys using client cert
 
