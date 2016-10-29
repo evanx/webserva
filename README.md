@@ -16,7 +16,7 @@ Try our demo, creating a ephemeral Redis keyspace: https://demo.webserva.com/cre
 
 #### Overview
 
-WebServa is a provider of serverless "keyspaces" we might be described as "web databases." It is cloud resource intended for web apps, mobile and IoT devices.
+WebServa is a provider of serverless "keyspaces," hyped as "web databases." It is cloud resource intended for web apps, mobile and IoT devices.
 Technically speaking, it offers a client-authenticated HTTPS API with a subset of Redis commands for accessing virtual Redis servers.
 See http://redis.io. It is essentially an deployment of Nginx and Redis integrated via our Node server for multi-tenancy and access control:
 - Private access is via HTTPS using self-signed client certs e.g. generated with `openssl`
