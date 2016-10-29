@@ -40,7 +40,7 @@ WebServa is a fast web database of structured textual data and JSON, not media a
 
 #### Accounts
 
-You can signup via our Telegram bot `@WebServaBot` via the command `/signup.` This will create an account as per your Telegram username. It will advise how to create an a client cert for https://secure.webserva.com/routes, and how to install our CLI `rhcurl` bash script. This is a wrapper of `curl` using your cert.
+You can signup via our Telegram bot `@WebServaBot` via the command `/signup.` This will create an account as per your Telegram username. It will advise how to create an a client cert for https://secure.webserva.com/routes, and how to install our CLI `wscurl` bash script. This is a wrapper of `curl` using your cert.
 
 ![Bot signup](http://evanx.github.io/images/rquery/ws040-webservabot.png)
 <hr>
