@@ -378,13 +378,13 @@ For convenience other domains are provided for the "secure" server:
 - json.webserva.com - response content always `application/javascript`
 
 Short-term deployment plans:
-- 64GB Redis Cluster
+- 32GB Redis Cluster
 - `cdn.webserva.com` for read-only queries to open warm data via CDN
 - `archive.webserva.com` for read-only authenticated access to warm data
 
 Note that clients should follow HTTP redirects to the above domains when reading data.
 
-As soon as warranted, we look forward to deploying Redis Clusters on multiple 64GB dedicated machines in multiple regions.
+As soon as warranted, we look forward to deploying Redis Clusters on multiple 32GB dedicated machines in multiple regions.
 
 Incidently, early adopters who pay for more resources e.g. 50c per 50MB RAM, will become co-owners of WebServa via a sharepool. The shareholding of the pool will be computed by an algorithm.
 
