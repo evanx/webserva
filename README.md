@@ -8,11 +8,11 @@ Try our demo, creating a ephemeral Redis keyspace: https://demo.webserva.com/cre
 
 #### News
 
-29 October: Preparing our first 32GB server.
+29 October 2016: Preparing our first 32GB server.
 
-20 June: Rebranding complete.
+20 June 2016: Rebranding complete.
 
-11 June: Note that this service is currently being rebranded from RedisHub.com to WebServa.com.
+11 June 2016: Rebranding from RedisHub.com to WebServa.com.
 
 #### Overview
 
