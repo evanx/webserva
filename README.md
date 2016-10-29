@@ -2,6 +2,8 @@
 
 The RedisHub.com and WebServa.com home page and `/about` are redirected to this page.
 
+![Landing screenshot](http://evanx.github.io/images/rquery/ws040-ephemeral.png)
+
 #### News
 
 29 October: Preparing our first 32GB server.
