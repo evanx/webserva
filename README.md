@@ -303,13 +303,12 @@ The platform should handle identity, auth, configuration, deployment, logging, m
 
 #### What is free?
 
-I want to offer a free public utility in perpetuity to support most low-volume use cases, where the computing cost is less than 10c per user per month, e.g. peak database size of 10MB RAM with a 10Gb transfer limit per month. Currently, early adopters get 50MB free for 6 months, after which they should contribute 50c per month.
+I want to offer a free public utility in perpetuity to support most low-volume use cases, e.g. peak database size of 50MB RAM with a 20Gb transfer limit per month.
 
 #### Why is the service so inexpensive compared to other vendors?
 
 We use Digital Ocean infrastructure costs as a market indicator, and price our service accordingly, e.g. $5 or 512MB, which is 50c for 50MB.
 This reflects our strategic vision to build a public utility, using our cost-free resources, namely myself.
-Incidently, as soon as warranted, we intend to deploy 64GB servers that can accomodate thousands of free accounts, if we are so lucky to attract that much interest. The more free accounts we have, the happier I'll be, that my efforts are not in vain.
 
 #### Why would a developer use an indie service which might become abandonware?
 
