@@ -2,7 +2,7 @@
 
 #### News
 
-29 October: Ordered http://www.scaleway.com 32GB server.
+29 October: Preparing a http://www.scaleway.com 32GB server for Webserva.com.
 
 20 June: Rebranding complete - try https://demo.webserva.com/create-ephemeral
 
