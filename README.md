@@ -79,6 +79,10 @@ Note that client certs are:
 - client certs are authorised by account admins via our Telegram.org bot
 - Our bot will advise the URL of a custom bash script to create client certs using `openssl`
 
+Documentation: https://github.com/evanx/rquery
+
+#### IoT
+
 Incidently, we will introduce a mechanism for auto-enrolling client certs, e.g. for IoT devices:
 - create a designated keyspace with enrollment tokens for your devices' IDs
 - populate with enrollment tokens for devices you will provision in given time window
@@ -87,8 +91,6 @@ Incidently, we will introduce a mechanism for auto-enrolling client certs, e.g. 
 - devices can read and write keyspaces according to the permissions of their role
 - devices might pull (read) their bootstrap configuration from a "configuration keyspace"
 - devices might push (write) information into a "monitoring keyspace"
-
-Documentation: https://github.com/evanx/rquery
 
 #### Technical Notes
 
