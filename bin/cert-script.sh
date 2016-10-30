@@ -8,7 +8,7 @@
     echo -n `cat cert.pem | tail -n+2 | sed '$ d'` | sed -e 's/\s//g' | shasum | cut -f1 -d' ' > cert.pem.shasum
     cat privkey.pem cert.pem > privcert.pem
     openssl x509 -text -in privcert.pem | grep 'CN='
-    if ! openssl pkcs12 -export -nodes -out privcert.p12 -inkey privkey.pem -in cert.pem 
+    if ! openssl pkcs12 -export -nodes -out privcert.p12 -inkey privkey.pem -in cert.pem
     then
       echo "ERROR $?: openssl pkcs12 ($PWD)"
       false # error code 1
@@ -17,10 +17,10 @@
       if uname | grep Linux
       then
         echo "Trying: curl -E privcert.pem $certWebhook"
-        curl -s -E privcert.pem "$certWebhook" 
-      else 
+        curl -s -E privcert.pem "$certWebhook"
+      else
         echo "Trying: curl -E privcert.p12 $certWebhook"
-        curl -s -E privcert.p12 "$certWebhook" 
+        curl -s -E privcert.p12 "$certWebhook"
       fi
       if [ $? -ne 0 ]
       then
@@ -31,6 +31,6 @@
       curl -s https://open.webserva.com/cert-script-help/${account}
       curl -s https://raw.githubusercontent.com/webserva/webserva/master/docs/install.wscurl.txt
       certSha=`cat cert.pem.shasum`
-      echo "Try '/grantcert $certSha' via https://telegram.me/WebServaBot?start"
+      echo "Try '/grant $certSha' via https://telegram.me/WebServaBot?start"
     fi
   fi

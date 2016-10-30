@@ -15,7 +15,7 @@ The custom script will execute the following:
 - create the `~/.webserva/live` directory for private key material
 - use `openssl` to create a private key, self-signed certificate, and P12 for your browser
 - advise how to install the `wscurl` wrapper script
-- advise you of the cert SHA to `/grantcert` via WebServaBot
+- advise you of the cert SHA to `/grant` via WebServaBot
 
 Having granted the cert via WebServaBot, invoke the endpoint https://secure.webserva.com/register-cert using the cert in one of these ways:
 - load `~/.webserva/live/privcert.p12` into your browser
@@ -35,7 +35,7 @@ The content of this script should be as follows when run with a placeholder `ACC
 ```shell
 # Curl this script and pipe it into bash for execution, as per the following line:
 # curl -s 'https://open.webserva.com/cert-script/ACCOUNT' | bash
-# 
+#
 ( # create subshell for local vars and to enable set -u -e
   set -u -e # error exit if any undeclared vars or unhandled errors
   account='ACCOUNT' # same as Telegram.org username
@@ -97,7 +97,7 @@ where we fetch https://raw.githubusercontent.com/webserva/webserva/master/bin/ce
       curl -s https://open.webserva.com/cert-script-help/${account}
       curl -s https://raw.githubusercontent.com/webserva/webserva/master/docs/install.wscurl.txt
       certSha=`cat cert.pem.shasum`
-      echo "Try '/grantcert $certSha' via https://telegram.me/WebServaBot?start"
+      echo "Try '/grant $certSha' via https://telegram.me/WebServaBot?start"
     fi
   fi
 ```
@@ -132,8 +132,8 @@ https://raw.githubusercontent.com/webserva/webserva/master/docs/install.wscurl.t
 This snippet of online CLI help advises the following:
 ```shell
 Try the following:
-  cd 
-  git clone https://github.com/webserva/webserva.git 
+  cd
+  git clone https://github.com/webserva/webserva.git
   alias ws='~/webserva/bin/wscurl.sh' # try add this line to ~/.bashrc
   ws help
 ```

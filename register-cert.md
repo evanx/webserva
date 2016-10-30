@@ -88,7 +88,7 @@ where we fetch https://raw.githubusercontent.com/evanx/redishub/master/bin/cert-
       curl -s https://redishub.com/cert-script-help/${account}
       curl -s https://raw.githubusercontent.com/webserva/webserva/master/docs/install.wscurl.txt
       certExtract=`cat cert.extract.pem`
-      echo "Try https://telegram.me/WebServaBot '/grantcert $certExtract'"
+      echo "Try https://telegram.me/WebServaBot '/grant $certExtract'"
     fi
   fi
 ```
