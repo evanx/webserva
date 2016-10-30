@@ -1,27 +1,24 @@
 ### WebServa.com
 
-The RedisHub.com and WebServa.com home page and `/about` are redirected to this page.
+The WebServa.com home page and `/about` are redirected to this page.
 
-Try our demo, creating a ephemeral Redis keyspace: https://demo.webserva.com/create-ephemeral
+Try our demo e.g. create a ephemeral Redis keyspace: https://demo.webserva.com/create-ephemeral
 
 ![Landing screenshot](http://evanx.github.io/images/rquery/ws040-ephemeral.png)
 
 #### News
 
-29 October 2016: Preparing our first 32GB server.
+29 October 2016: Trying Scaleway.com 32GB RAM server (Amsterdam), and 8GB RAM (Paris).
 
-20 June 2016: Rebranding complete.
-
-11 June 2016: Rebranding from RedisHub.com to WebServa.com.
+20 June 2016: WebServa.com rebranding complete, from RedisHub.com, commenced 11 June 2016.
 
 #### Overview
 
 WebServa is a provider of serverless "keyspaces," hyped as "web databases." It is cloud resource intended for web apps, mobile and IoT devices.
 Technically speaking, it offers a client-authenticated HTTPS API with a subset of Redis commands for accessing virtual Redis servers.
-See http://redis.io. It is essentially an deployment of Nginx and Redis integrated via our Node server for multi-tenancy and access control:
+See http://redis.io.
 - Private access is via HTTPS using self-signed client certs e.g. generated with `openssl`
-- Built-in Telegram.org bot for two-factor identity authentication of account admins
-- Use the bot to control access to your keyspaces e.g. generate/grant/revoke certs
+- Built-in Telegram.org bot for identity authentication and authorisation of account admins
 - CDN courtesy of awesome CloudFlare.com for optionally publishing keyspaces for mass consumption
 
 You store data by key in a "keyspace," and can use lists, sets and sorted sets to keep track of things. There is more to come e.g. geographical data courtesy of Redis 3.2.
@@ -34,35 +31,33 @@ The goals of WebServa are:
 - instant virtual Redis servers
 - private, shared and public keyspaces
 - access control to keyspaces and their keys
-- web publication of data and views
-
-WebServa is a fast web database of structured textual data and JSON, not media and web asset artifacts. For example, your videos and images might be hosted on YouTube.com and Cloudinary.com. Their URIs might be stored in WebServa for the purpose of rendering HTML views that reference such assets via URL.
+- web publication of data
 
 #### Accounts
 
-You can signup via our Telegram bot `@WebServaBot` via the command `/signup.` This will create an account as per your Telegram username. It will advise how to create an a client cert for https://secure.webserva.com/routes, and how to install our CLI `wscurl` bash script. This is a wrapper of `curl` using your cert.
+You can signup via our Telegram bot `@WebServaBot` via the command `/signup.` This will create an account as per your Telegram username. It will advise how to create an a client cert for https://secure.webserva.com, and how to install our CLI `wscurl` bash script. This is a wrapper of `curl` using your admin cert.
 
 ![Bot signup](http://evanx.github.io/images/rquery/ws040-webservabot.png)
 <hr>
 
 Our "50MB" service is free. This service bundle is limited to 50MB peak RAM and 20GB monthly transfer.
 So for example, you can store 1 million records averaging 50 characters each, on us.
-Your account can be topped up via virtual currency where "50MB" bundles are priced at roughly 50c USD per month.
+Late, your account can be topped up via virtual currency where "50MB" bundles are priced at roughly 50c USD per month.
 This is determined from Digital Ocean infrastructure costs, as a market indicator.
 
 So sign up and imagine some cool use cases for storing data in memory in the cloud, publishable in volume via CDN, or kept private:
 - ephemeral keyspaces have a randomly-generated name to be secret by default, but sharable
-- keyspaces you create on account are private by default
-- private access is via client certs you have authorised via @WebServaBot, our "Gateway bot"
-- you can publish specific keyspaces for read-only web access via CDN
+- keyspaces on your account are private by default
+- private access is via client certs you have authorised
+- publish specific keyspaces for read-only web access via CDN
 
-We provide a script you can curl into bash to create a client cert easily:
+We provide a script you can curl into bash to create an admin cert rather easily:
 
-- https://open.webserva.com/cert-script/ME - customise with your Telegram.org username in place of "ME"
+- https://open.webserva.com/cert-script/ACCOUNT - customise with your Telegram.org username in place of "ACCOUNT"
 
 Note that it will curl other scripts as follows:
 
-- https://open.webserva.com/cert-script-help/ME - some customised help
+- https://open.webserva.com/cert-script-help/ACCOUNT - some customised help
 - https://raw.githubusercontent.com/webserva/webserva/master/bin/cert-script.sh - openssl cert generation
 - https://raw.githubusercontent.com/webserva/webserva/master/docs/install.wscurl.txt - CLI installation instructions
 
