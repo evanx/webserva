@@ -79,10 +79,7 @@ Note that client certs are:
 - client certs are authorised by account admins via our Telegram.org bot
 - Our bot will advise the URL of a custom bash script to create client certs using `openssl`
 
-Incidently, we will introduce a mechanism for auto-enrolling client certs, e.g. for IoT devices.
-A special keyspace might be used set enrollment tokens for a certain role e.g. `device` and client ID on your account.
-Certs professing your account (via their O name), matching the designated role (OU) for that client ID (CN),
-and bearing the matching enrollment token, can auto-enroll their self-signed cert.
+Incidently, we will introduce a mechanism for auto-enrolling client certs, e.g. for IoT devices, as follows. You populate a designated keyspace with enrollment tokens matching device roles and client IDs. A device could then enroll using the secret token matching its cert i.e. your account (O name), device/role (OU) and device/client ID (CN).
 
 Documentation: https://github.com/evanx/rquery
 
