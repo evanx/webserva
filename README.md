@@ -58,11 +58,6 @@ Note that it will curl other scripts as follows:
 - https://raw.githubusercontent.com/webserva/webserva/master/bin/cert-script.sh - openssl cert generation
 - https://raw.githubusercontent.com/webserva/webserva/master/docs/install.wscurl.txt - CLI installation instructions
 
-Incidently, we will introduce a standard keyspace role `submitter` which can append to a list, set a new field,
-and perform some other aggregating commands.
-However it cannot access data created by other submitters.
-This is potentially useful for registries, message hubs and metrics aggregators.
-
 ![Curl command line wrapper](http://evanx.github.io/images/rquery/ws050-wscurl-register.png)
 
 ![Bot signup](http://evanx.github.io/images/rquery/ws050-bot.png)
@@ -76,6 +71,7 @@ Note that client certs are:
 
 Documentation: https://github.com/evanx/rquery
 
+
 #### IoT
 
 Incidently, we will introduce a mechanism for auto-enrolling client certs, e.g. for IoT devices:
@@ -86,6 +82,15 @@ Incidently, we will introduce a mechanism for auto-enrolling client certs, e.g. 
 - devices can read and write keyspaces according to the permissions of their role
 - devices might pull (read) their bootstrap configuration from a "configuration keyspace"
 - devices might push (write) information into a "monitoring keyspace"
+
+
+#### Data collection 
+
+Incidently, we will introduce a standard keyspace role `submitter` which can append to a list, set a new field,
+and perform some other aggregating commands.
+However it cannot access data created by other submitters.
+This is potentially useful for registries, message hubs and metrics aggregators.
+
 
 #### Technical Notes
 
