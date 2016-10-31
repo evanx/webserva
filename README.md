@@ -68,14 +68,14 @@ This is potentially useful for registries, message hubs and metrics aggregators.
 
 ![Curl command line wrapper](http://evanx.github.io/images/rquery/ws050-wscurl-register.png)
 
+![Bot signup](http://evanx.github.io/images/rquery/ws050-bot.png)
+<hr>
+
 Note that client certs are:
 - self-signed e.g. created using `openssl` with your account name as the Organisation (O name)
 - the Organisational Unit (OU name) is the role of the cert e.g. admin, submitter, device
 - client certs are authorised by account admins via our Telegram.org bot
 - Our bot will advise the URL of a custom bash script to create client certs using `openssl`
-
-![Bot signup](http://evanx.github.io/images/rquery/ws050-bot.png)
-<hr>
 
 Documentation: https://github.com/evanx/rquery
 
