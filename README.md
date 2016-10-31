@@ -37,7 +37,7 @@ The goals of WebServa are:
 
 You can signup via our Telegram bot `@WebServaBot` via the command `/signup.` This will create an account as per your Telegram username. It will advise how to create an a client cert for https://secure.webserva.com, and how to install our CLI `wscurl` bash script. This is a wrapper of `curl` using your admin cert.
 
-![Bot signup](http://evanx.github.io/images/rquery/ws050-bot-signup.png)
+![Bot signup](http://evanx.github.io/images/rquery/ws050-bot-signup-UPDATED.png)
 <hr>
 
 ![Bot signup](http://evanx.github.io/images/rquery/ws050-bot.png)
