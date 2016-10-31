@@ -53,11 +53,11 @@ So sign up and imagine some cool use cases for storing data in memory in the clo
 
 We provide a script you can curl into bash to create an admin cert rather easily:
 
-- https://open.webserva.com/cert-script/ACCOUNT - customise with your Telegram.org username in place of "ACCOUNT"
+- https://open.webserva.com/cert-script/:account - customise with your account's Telegram.org username in place of `:account`
 
 Note that it will curl other scripts as follows:
 
-- https://open.webserva.com/cert-script-help/ACCOUNT - some customised help
+- https://open.webserva.com/cert-script-help/:account - some customised help
 - https://raw.githubusercontent.com/webserva/webserva/master/bin/cert-script.sh - openssl cert generation
 - https://raw.githubusercontent.com/webserva/webserva/master/docs/install.wscurl.txt - CLI installation instructions
 
