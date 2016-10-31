@@ -66,7 +66,7 @@ and perform some other aggregating commands.
 However it cannot access data created by other submitters.
 This is potentially useful for registries, message hubs and metrics aggregators.
 
-![Curl command line wrapper](http://evanx.github.io/images/rquery/ws050-wscurl-register.png)
+![Curl command line wrapper](http://evanx.github.io/images/rquery/ws050-wscurl-register-UPDATED.png)
 
 ![Bot signup](http://evanx.github.io/images/rquery/ws050-bot.png)
 <hr>
