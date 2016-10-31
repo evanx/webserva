@@ -40,10 +40,7 @@ You can signup via our Telegram bot `@WebServaBot` via the command `/signup.` Th
 ![Bot signup](http://evanx.github.io/images/rquery/ws050-bot-signup.png)
 <hr>
 
-Our "50MB" service is free. This service bundle is limited to 50MB peak RAM and 20GB monthly transfer.
-So for example, you can store 1 million records averaging 50 characters each, on us.
-Late, your account can be topped up via virtual currency where "50MB" bundles are priced at roughly 50c USD per month.
-This is determined from Digital Ocean infrastructure costs, as a market indicator.
+Your first 50MB is free, and thereafter 50c per 50MB per month is payable in virtual currency.
 
 So sign up and imagine some cool use cases for storing data in memory in the cloud, publishable in volume via CDN, or kept private:
 - ephemeral keyspaces have a randomly-generated name to be secret by default, but sharable
