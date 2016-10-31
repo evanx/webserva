@@ -15,7 +15,7 @@ The custom script will execute the following:
 - create the `~/.webserva/live` directory for private key material
 - use `openssl` to create a private key, self-signed certificate, and P12 for your browser
 - advise how to install the `wscurl` wrapper script
-- advise you of the cert SHA to `/grant` via WebServaBot
+- advise you of the cert ID to `/grant` via WebServaBot
 
 Having granted the cert via WebServaBot, invoke the endpoint https://secure.webserva.com/register-cert using the cert in one of these ways:
 - load `~/.webserva/live/privcert.p12` into your browser
