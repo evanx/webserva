@@ -37,10 +37,7 @@ The goals of WebServa are:
 
 You can signup via our Telegram bot `@WebServaBot` via the command `/signup.` This will create an account as per your Telegram username. It will advise how to create an a client cert for https://secure.webserva.com, and how to install our CLI `wscurl` bash script. This is a wrapper of `curl` using your admin cert.
 
-![Bot signup](http://evanx.github.io/images/rquery/ws050-bot-signup-UPDATED.png)
-<hr>
-
-![Bot signup](http://evanx.github.io/images/rquery/ws050-bot.png)
+![Bot signup](http://evanx.github.io/images/rquery/ws050-bot-signup.png)
 <hr>
 
 Our "50MB" service is free. This service bundle is limited to 50MB peak RAM and 20GB monthly transfer.
@@ -69,13 +66,16 @@ and perform some other aggregating commands.
 However it cannot access data created by other submitters.
 This is potentially useful for registries, message hubs and metrics aggregators.
 
-![Curl command line wrapper](http://evanx.github.io/images/rquery/ws040-wscurl.png)
+![Curl command line wrapper](http://evanx.github.io/images/rquery/ws050-wscurl-register.png)
 
 Note that client certs are:
 - self-signed e.g. created using `openssl` with your account name as the Organisation (O name)
 - the Organisational Unit (OU name) is the role of the cert e.g. admin, submitter, device
 - client certs are authorised by account admins via our Telegram.org bot
 - Our bot will advise the URL of a custom bash script to create client certs using `openssl`
+
+![Bot signup](http://evanx.github.io/images/rquery/ws050-bot.png)
+<hr>
 
 Documentation: https://github.com/evanx/rquery
 
