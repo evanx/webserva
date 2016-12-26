@@ -1,7 +1,7 @@
 
 #### How to create a client cert
 
-<b>Please be redirected to: https://github.com/webserva/webserva/blob/master/docs/register-cert.md</b>
+<b>Please be redirected to: https://github.com/evanx/webserva/blob/master/docs/register-cert.md</b>
 
 You can use our `bash` cert creation script using your account name, as per https://telegram.me/WebServaBot
 
@@ -53,7 +53,7 @@ The content of this script is as follows when run with a placeholder `ACCOUNT` a
     echo "Directory ~/.webserva/live already exists. Try add '?archive' query to the URL."
   else
     mkdir ~/.webserva/live && cd $_ # error exit if dir exists
-    curl -s https://raw.githubusercontent.com/webserva/webserva/master/bin/cert-script.sh -O
+    curl -s https://raw.githubusercontent.com/evanx/webserva/master/bin/cert-script.sh -O
     cat cert-script.sh
     sha1sum cert-script.sh
     curl -s https://webserva.com/assets/cert-script.sh.sha1sum
@@ -86,7 +86,7 @@ where we fetch https://raw.githubusercontent.com/evanx/redishub/master/bin/cert-
       pwd; ls -l
       sleep 2
       curl -s https://redishub.com/cert-script-help/${account}
-      curl -s https://raw.githubusercontent.com/webserva/webserva/master/docs/install.wscurl.txt
+      curl -s https://raw.githubusercontent.com/evanx/webserva/master/docs/install.wscurl.txt
       certExtract=`cat cert.extract.pem`
       echo "Try https://telegram.me/WebServaBot '/grant $certExtract'"
     fi

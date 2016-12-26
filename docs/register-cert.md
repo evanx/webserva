@@ -58,7 +58,7 @@ The content of this script should be as follows when run with a placeholder `ACC
     echo "Directory ~/.webserva/live already exists. Try add '?archive' query to the URL."
   else # fetch, review and check SHA of static cert-script.sh for execution
     mkdir ~/.webserva/live && cd $_ # error exit if dir exists
-    curl -s https://raw.githubusercontent.com/webserva/webserva/master/bin/cert-script.sh -O
+    curl -s https://raw.githubusercontent.com/evanx/webserva/master/bin/cert-script.sh -O
     echo 'Please review and press Ctrl-C to abort within 8 seconds:'
     cat cert-script.sh # review the above fetched script, we intend to execute
     echo 'Double checking script integrity hashes:'
@@ -71,7 +71,7 @@ The content of this script should be as follows when run with a placeholder `ACC
   fi
 )
 ```
-where we fetch https://raw.githubusercontent.com/webserva/webserva/master/bin/cert-script.sh which should be:
+where we fetch https://raw.githubusercontent.com/evanx/webserva/master/bin/cert-script.sh which should be:
 
 ```shell
   echo "${account}" > account
@@ -95,7 +95,7 @@ where we fetch https://raw.githubusercontent.com/webserva/webserva/master/bin/ce
       pwd; ls -l
       sleep 2
       curl -s https://open.webserva.com/cert-script-help/${account}
-      curl -s https://raw.githubusercontent.com/webserva/webserva/master/docs/install.wscurl.txt
+      curl -s https://raw.githubusercontent.com/evanx/webserva/master/docs/install.wscurl.txt
       certSha=`cat cert.pem.shasum`
       echo "Try '/grant $certSha' via https://telegram.me/WebServaBot?start"
     fi
@@ -103,7 +103,7 @@ where we fetch https://raw.githubusercontent.com/webserva/webserva/master/bin/ce
 ```
 where the custom script will check its SHA:
 ```shell
-curl -s https://raw.githubusercontent.com/webserva/webserva/master/bin/cert-script.sh | shasum
+curl -s https://raw.githubusercontent.com/evanx/webserva/master/bin/cert-script.sh | shasum
 ```
 ```shell
 a48e967d4fc898e9bc0c3509931c936a81a40582
@@ -127,13 +127,13 @@ It also offers some builtin help with hints.
 
 Read the following instructions to install `wscurl,` our `curl` wrapper script to use your `privcert.pem` in `~/.webserva/live.`
 
-https://raw.githubusercontent.com/webserva/webserva/master/docs/install.wscurl.txt
+https://raw.githubusercontent.com/evanx/webserva/master/docs/install.wscurl.txt
 
 This snippet of online CLI help advises the following:
 ```shell
 Try the following:
   cd
-  git clone https://github.com/webserva/webserva.git
+  git clone https://github.com/evanx/webserva.git
   alias ws='~/webserva/bin/wscurl.sh' # try add this line to ~/.bashrc
   ws help
 ```
@@ -146,7 +146,7 @@ You should be able to remove all vestiges of the above from your machine as foll
 
 ```shell
 rm -rf ~/.webserva # contains private key matter
-rm -rf ~/webserva # clone of https://github.com/webserva/webserva
+rm -rf ~/webserva # clone of https://github.com/evanx/webserva
 ```
 
 #### Troubleshooting

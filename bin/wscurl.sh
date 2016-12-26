@@ -13,7 +13,7 @@ shellArgs="${*}"
 
 if [ ! -x ~/webserva/bin/wslogging.sh ]
 then
-  >&2 echo "Missing: ~/webserva/bin/wslogging.sh. Try: git clone https://github.com/webserva/webserva.git"
+  >&2 echo "Missing: ~/webserva/bin/wslogging.sh. Try: git clone https://github.com/evanx/webserva.git"
   exit 3
 fi
 
