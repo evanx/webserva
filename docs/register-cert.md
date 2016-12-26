@@ -64,7 +64,7 @@ The content of this script should be as follows when run with a placeholder `ACC
     echo 'Double checking script integrity hashes:'
     shasum cert-script.sh # double check its SHA against another source below
     curl -s https://open.webserva.com/assets/cert-script.sh.shasum
-    echo 'f6edc446466e228965e51bee120425b497605949' # hardcoded SHA of stable version
+    echo 'aee902de05dc8e85a7592c85fb074c65fb77043c' # hardcoded SHA of stable version
     echo 'Press Ctrl-C in the next 8 seconds to abort, and if any of the above hashes differ'
     sleep 8 # give time to abort if SHAs not consistent, or script review incomplete
     source <(cat cert-script.sh) # execute fetched script, hence the above review and SHA
