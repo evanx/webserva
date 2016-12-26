@@ -28,7 +28,7 @@
       fi
       pwd; ls -l
       sleep 2
-      curl -s https://open.webserva.com/cert-script-help/${account}
+      curl -s https://webserva.com/cert-script-help/${account}
       curl -s https://raw.githubusercontent.com/webserva/webserva/master/docs/install.wscurl.txt
     fi
   fi
