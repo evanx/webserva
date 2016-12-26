@@ -31,18 +31,14 @@ The goals of WebServa are:
 
 #### Accounts
 
-You can signup via our Telegram bot `@WebServaBot` via the command `/signup.` This will create an account as per your Telegram username. It will advise how to create an a client cert for https://secure.webserva.com, and how to install our CLI `wscurl` bash script. This is a wrapper of `curl` using your admin cert.
+You can signup via our Telegram bot `@WebServaBot` via the command `/signup.` This will create an account as per your Telegram username.
 
-![Bot signup](http://evanx.github.io/images/rquery/ws050-bot-signup.png)
+The bot offers a command `/login` which will create a magic login session link to your account.
+
+![Bot signup](http://evanx.github.io/images/rquery/ws051-bot-signup.png)
 <hr>
 
-Your first 50MB is free, and thereafter 50c per 50MB per month is payable in virtual currency.
-
-So sign up and imagine some cool use cases for storing data in memory in the cloud, publishable in volume via CDN, or kept private:
-- ephemeral keyspaces have a randomly-generated name to be secret by default, but sharable
-- keyspaces on your account are private by default
-- private access is via client certs you have authorised
-- publish specific keyspaces for read-only web access via CDN
+### Certs
 
 We provide a script you can curl into bash to create an admin cert rather easily:
 
@@ -53,6 +49,8 @@ Note that it will curl other scripts as follows:
 - https://webserva.com/cert-script-help/ACCOUNT - some customised help
 - https://raw.githubusercontent.com/webserva/webserva/master/bin/cert-script.sh - openssl cert generation
 - https://raw.githubusercontent.com/webserva/webserva/master/docs/install.wscurl.txt - CLI installation instructions
+
+Then you can install our CLI `wscurl` bash script. This is a wrapper of `curl` using your admin cert.
 
 ![Curl command line wrapper](http://evanx.github.io/images/rquery/ws050-wscurl-register.png)
 
