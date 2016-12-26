@@ -2,9 +2,9 @@
 
 The WebServa.com home page and `/about` are redirected to this page.
 
-Try our demo e.g. create a ephemeral Redis keyspace: https://demo.webserva.com/create-ephemeral
+Try create a ephemeral Redis keyspace: https://webserva.com/create-ephemeral
 
-![Landing screenshot](http://evanx.github.io/images/rquery/ws040-ephemeral.png)
+![Landing screenshot](http://evanx.github.io/images/rquery/ws050-ephemeral.png)
 
 #### News
 
@@ -19,7 +19,7 @@ See http://redis.io.
 - Private access is via HTTPS using self-signed client certs e.g. generated with `openssl`
 - Built-in Telegram.org bot for identity authentication and authorisation of account admins
 
-Try our demo: https://demo.webserva.com/create-ephemeral
+Try the demo: https://webserva.com/create-ephemeral
 
 This endpoint creates a new ephemeral keyspace with a TTL of 10 minutes, for demonstration purposes. This keyspace is assigned a randomized name, so that it is secret by default.
 
@@ -47,8 +47,8 @@ We provide a script you can curl into bash to create an admin cert rather easily
 Note that it will curl other scripts as follows:
 
 - https://webserva.com/cert-script-help/ACCOUNT - some customised help
-- https://raw.githubusercontent.com/webserva/webserva/master/bin/cert-script.sh - openssl cert generation
-- https://raw.githubusercontent.com/webserva/webserva/master/docs/install.wscurl.txt - CLI installation instructions
+- https://raw.githubusercontent.com/evanx/webserva/master/bin/cert-script.sh - openssl cert generation
+- https://raw.githubusercontent.com/evanx/webserva/master/docs/install.wscurl.txt - CLI installation instructions
 
 Then you can install our CLI `wscurl` bash script. This is a wrapper of `curl` using your admin cert.
 
@@ -105,11 +105,11 @@ Incidently, "hub" is the specially named "open" account name, i.e. accessed with
 
 #### How do I try Redis commands?
 
-Try: https://demo.webserva.com/create-ephemeral
+Try: https://webserva.com/create-ephemeral
 
 This will create a new ephemeral keyspace for you. The keyspace home page lists some sample commands you can try. These links are rendered in color.
 
-Incidently, this will create a ephemeral keyspace on the "demo" database. TTLs are 10 minutes only, but this is fine for the playground.
+Incidently, this will create a ephemeral keyspace were TTLs are 10 minutes only, but this is fine for the playground.
 
 
 #### Why use a Redis database rather than SQL?
