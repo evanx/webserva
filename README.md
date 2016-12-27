@@ -39,16 +39,16 @@ You can signup via our Telegram bot `@WebServaBot` via the command `/signup.` Th
 
 The bot offers a command `/login` which will create a magic login session link to your account.
 
-![Bot signup](http://evanx.github.io/images/rquery/ws051-bot-signup.png)
+![Bot signup](https://github.com/evanx/webserva/raw/master/readme-images/bot-signup.png)
 <hr>
 
 ### Login 
 
 For web console access, you use our Bot to generate a magic link.
 
-![Bot signup](http://evanx.github.io/images/rquery/ws050-bot-login.png)
+![Bot signup](https://github.com/evanx/webserva/raw/master/readme-images/bot-login.png)
 
-![Mobile login](http://evanx.github.io/images/rquery/ws050-mobile-login.png)
+![Mobile login](https://github.com/evanx/webserva/raw/master/readme-images/mobile-login.png)
 
 <hr>
 
