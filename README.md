@@ -29,6 +29,10 @@ The goals of WebServa are:
 - access control to keyspaces and their keys
 - web publication of data
 
+Technically speaking, WebServa is an Nginx deployment of our opensource Node webserver for Redis multi-tenancy and access control.
+
+We use a Telegram.org bot for identity authentication and authorisation, e.g. granting cert access to your account keyspaces.
+
 #### Accounts
 
 You can signup via our Telegram bot `@WebServaBot` via the command `/signup.` This will create an account as per your Telegram username.
@@ -36,6 +40,16 @@ You can signup via our Telegram bot `@WebServaBot` via the command `/signup.` Th
 The bot offers a command `/login` which will create a magic login session link to your account.
 
 ![Bot signup](http://evanx.github.io/images/rquery/ws051-bot-signup.png)
+<hr>
+
+### Login 
+
+For web console access, you use our Bot to generate a magic link.
+
+![Bot signup](http://evanx.github.io/images/rquery/ws050-bot-login.png)
+
+![Mobile login](http://evanx.github.io/images/rquery/ws050-mobile-login.png)
+
 <hr>
 
 ### Certs
@@ -63,14 +77,9 @@ Note that client certs are:
 - client certs are authorised by account admins via our Telegram.org bot
 - Our bot will advise the URL of a custom bash script to create client certs using `openssl`
 
-Documentation: https://github.com/evanx/rquery
+![Bot signup](http://evanx.github.io/images/rquery/ws050-bot.png)
+<hr>
 
-
-#### Technical Notes
-
-Technically speaking, WebServa is an Nginx deployment of our opensource Node webserver for Redis multi-tenancy and access control.
-
-We use a Telegram.org bot for identity authentication and authorisation, e.g. granting cert access to your account keyspaces.
 
 ### Status
 
