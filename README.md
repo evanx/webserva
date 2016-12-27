@@ -47,6 +47,9 @@ The bot offers a command `/login` which will create a magic login session link t
 For web console access, you use our Bot to generate a magic link.
 
 ![Bot signup](https://github.com/evanx/webserva/raw/master/readme-images/bot-login.png)
+<hr>
+
+Naturally this is handy for mobile login via Telegram too :)
 
 <img src="https://github.com/evanx/webserva/raw/master/readme-images/mobile-login.jpg" width="320">
 
