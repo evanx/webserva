@@ -48,7 +48,7 @@ For web console access, you use our Bot to generate a magic link.
 
 ![Bot signup](https://github.com/evanx/webserva/raw/master/readme-images/bot-login.png)
 
-![Mobile login](https://github.com/evanx/webserva/raw/master/readme-images/mobile-login.jpg)
+<img src='https://github.com/evanx/webserva/raw/master/readme-images/mobile-login.jpg' size=320>
 
 <hr>
 
