@@ -33,6 +33,11 @@ Technically speaking, WebServa is an Nginx deployment of our opensource Node web
 
 We use a Telegram.org bot for identity authentication and authorisation, e.g. granting cert access to your account keyspaces.
 
+Also see our related projects for Telegram bots:
+- https://github.com/evanx/telegrambot-auth - using a Telegram bot for login auth 
+- https://github.com/evanx/webhook-publish - single webhook server for Telegram messages for multiple bots, possibly remote e.g. development box for ssh port forwarding 
+- https://github.com/evanx/webhook-push - similar but pushes to Redis list rather than publishing to a Redis channel
+
 #### Accounts
 
 You can signup via our Telegram bot `@WebServaBot` via the command `/signup.` This will create an account as per your Telegram username.
