@@ -1,0 +1,22 @@
+{
+  "name": "webserva",
+  "version": "0.1.0",
+  "description": "The WebServa.com home page.",
+  "main": "lib/index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evanx/webserva.git"
+  },
+  "author": "@evanxummers",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/evanx/webserva/issues"
+  },
+  "homepage": "https://github.com/evanx/webserva#readme"
+}
